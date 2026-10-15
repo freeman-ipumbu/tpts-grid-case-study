@@ -161,7 +161,7 @@ Grid is a **private pilot / production candidate**, not a promise of a fully liv
 
 ## Links
 
-- **Launch URL:** [tpts-grid.pages.dev](https://tpts-grid.pages.dev) *(canonical hostname requested; availability follows deployment)*
+- **Launch URL:** [tpts-grid.pages.dev](https://tpts-grid.pages.dev) *(live production discovery and onboarding pilot)*
 - **TPTS Namibia:** [tptsnam.com](https://www.tptsnam.com/)
 - **TPTS privacy policy:** [tptsnam.com/privacy-policy](https://www.tptsnam.com/privacy-policy/)
 - **Product enquiries:** [info@tptsnam.com](mailto:info@tptsnam.com)
