@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Product and partnership enquiries
+    url: https://www.tptsnam.com/contact/
+    about: Contact TPTS privately for product, property, channel or partnership enquiries.
+  - name: Security report
+    url: https://www.tptsnam.com/contact/
+    about: Never disclose a suspected vulnerability in a public issue.
+  - name: TPTS privacy policy
+    url: https://www.tptsnam.com/privacy-policy/
+    about: Read the operative TPTS privacy terms.

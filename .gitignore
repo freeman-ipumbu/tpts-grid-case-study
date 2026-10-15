@@ -1,0 +1,29 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local output
+node_modules/
+dist/
+.next/
+.wrangler/
+coverage/
+*.log
+
+# Configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*
+
+# Material that must never enter the public case study
+.private/
+internal/
+product-source/
+raw-research/

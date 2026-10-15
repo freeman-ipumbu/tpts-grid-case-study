@@ -1,0 +1,47 @@
+name: Documentation correction
+description: Report an inaccurate public fact, inaccessible passage or broken official link.
+title: "docs: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository documents the product; it does not contain the production application. Do not include credentials, personal data, security findings or private partner material. Report security concerns using the private link in the issue picker.
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: Correction type
+      options:
+        - Public fact or status
+        - Broken official link
+        - Accessibility
+        - Attribution
+        - Typo or formatting
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What needs correcting?
+      description: Quote only the minimum public text needed to locate the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Suggested correction
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative public source
+      description: For factual changes, link to the provider or organisation's official page.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safe confirmation
+      options:
+        - label: I have not included credentials, personal data, security findings or confidential material.
+          required: true
