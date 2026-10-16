@@ -11,6 +11,8 @@ TPTS Grid is a Namibia-first travel network for spatial discovery, traveller-own
 
 This is the public product case study. The production source, credentials, commercial agreements, private host submissions and payment implementation are not published here.
 
+The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-grid.pages.dev), hosted on Cloudflare Pages.
+
 ## Current product snapshot
 
 The 16 October 2026 release centres on three connected surfaces:
@@ -27,14 +29,14 @@ The public product also includes 21 geographic destination anchors. Destination 
 
 ## Product truth at a glance
 
-| Surface | What is implemented or publicly present | What is deliberately not claimed |
+| Surface | Current posture | What is deliberately not claimed |
 | --- | --- | --- |
 | Route Studio | Editable, locally saved trip order across real destination anchors | Turn-by-turn routing, live road conditions, availability or a reservation |
 | Map | Field, Atlas and Signal modes; accessible status and text fallbacks | That a map point is a partner or a bookable room |
 | Property directory | 28 independently checked factual records; 27 exact OSM points | Copied OTA descriptions, photos, ratings, reviews, prices or availability |
 | Property records | Official link, locality, source provenance, claim and correction paths | Operator control until authority has been verified |
 | Owner onboarding | A three-step private submission and verification queue | Automatic publication, verification or bookability |
-| Owner workspace | A signed-in, read-only view of applications tied to the verified account | Editing, operator review controls, inventory activation or access to other owners' records |
+| Owner account access | Gated pending a TPTS-owned identity boundary | That owner authentication, an account workspace, operator controls, publication or inventory activation are live |
 | Integration launchpad | 15 public programme paths classified by readiness | Credentials, approval, signed agreements or live production access |
 | Payments | A guarded server-side architecture and readiness boundary | Live payment creation or automatic paid-state confirmation |
 
@@ -75,7 +77,7 @@ The owner path has three progressive steps:
 
 Contact details and verification evidence remain private. Marketing consent is separate and optional. A submitted draft enters `verification_required`; it is not silently published and cannot become bookable without later inventory activation.
 
-In the current source, a signed-in owner can use the read-only owner workspace to follow applications attached to that verified account. The workspace reads the existing application records; it does not edit them, publish owner content, verify authority or activate inventory. Identity is checked at the server boundary; on ordinary Pages and other non-Sites deployments the account view fails closed, and the browser never receives or uses the operator review token.
+Owner authentication and the account workspace are not live on the canonical customer production surface. Both remain gated until TPTS operates an identity boundary that can authenticate an owner and scope records without exposing operator credentials. The public claim, correction/removal and private submission paths remain separate from future authenticated account access.
 
 ## Safe integration launchpad
 
@@ -172,7 +174,7 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 | Factual property directory | Live; 28 records, 27 exact attributed OSM points |
 | Claim, correction and removal paths | Live; claims still require authority verification |
 | Direct owner application | Live as a private verification-queue submission |
-| Signed-in owner workspace | Implemented as a read-only account view; requires trusted Sites identity at runtime |
+| Owner authentication and account workspace | Gated; pending TPTS-owned identity and not live on the customer production surface |
 | Claimed owner-managed public records | Gated by verification; not represented as current inventory |
 | Commercial inventory and OTA availability | Not live |
 | Integration launchpad | Live as programme research and readiness guidance only |
@@ -181,7 +183,7 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 
 ## Links
 
-- **Pilot:** [tpts-grid.pages.dev](https://tpts-grid.pages.dev)
+- **Canonical customer production surface:** [tpts-grid.pages.dev](https://tpts-grid.pages.dev)
 - **TPTS Namibia:** [tptsnam.com](https://www.tptsnam.com/)
 - **TPTS privacy policy:** [tptsnam.com/privacy-policy](https://www.tptsnam.com/privacy-policy/)
 - **Product enquiries and correction requests:** [info@tptsnam.com](mailto:info@tptsnam.com)

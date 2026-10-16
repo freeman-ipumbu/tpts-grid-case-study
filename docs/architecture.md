@@ -18,7 +18,7 @@ As of 16 October 2026, the public product contains:
 - 28 factual property directory records, including 27 exact OSM-sourced points;
 - a claim path and an account-free correction/removal path for every public record;
 - private owner onboarding into a verification queue;
-- a read-only signed-in owner workspace for application status, scoped to the verified account;
+- owner authentication and account visibility held behind a future TPTS-owned identity gate, not claimed as live;
 - a 15-path integration launchpad that records programme readiness, not connection status;
 - a payment readiness boundary with live creation and paid-state confirmation disabled.
 
@@ -31,8 +31,9 @@ flowchart LR
     traveller[Traveller] -->|explores and edits| route[Route Studio]
     traveller -->|reads factual records| directory[Public place directory]
     host[Property operator] -->|claims or submits| onboarding[Private onboarding]
-    host -->|reads own application status| workspace[Owner workspace]
-    workspace -->|server-scoped GET| onboarding
+    host -. future authentication .-> ownerIdentity[TPTS-owned identity]
+    ownerIdentity -. scoped account access .-> workspace[Owner workspace]
+    workspace -. read-only application status .-> onboarding
     onboarding -->|human review| ops[TPTS verification]
     directory -->|attributed facts| maps[Open mapping ecosystem]
     ops --> claimed[Claimed owner record]
@@ -43,9 +44,9 @@ flowchart LR
     classDef core fill:#061b1c,stroke:#42d5bd,color:#fffdf7;
     classDef human fill:#f5efe2,stroke:#ce6842,color:#061b1c;
     classDef external fill:#fffdf7,stroke:#0d6872,color:#061b1c,stroke-dasharray:5 4;
-    class route,directory,onboarding,workspace,ops core;
+    class route,directory,onboarding,ops core;
     class traveller,host,claimed human;
-    class maps,bookable,payment,channels external;
+    class maps,ownerIdentity,workspace,bookable,payment,channels external;
 ```
 
 ## Capability boundaries
@@ -60,7 +61,7 @@ Stores public destination anchors and TPTS-authored planning metadata separately
 
 ### Supply and verification
 
-Publishes only a minimal factual shell for an unclaimed public record. A property card can start a claim, while every record offers an account-free correction/removal route. New-property and claim submissions collect a public point plus operating context and private contact data, bind the submission to the owner where applicable, and place it in a review state. A signed-in owner workspace reads only the existing applications attached to the verified account. It has no mutation or operator-review capability; the account view fails closed outside the trusted Sites identity boundary and the browser never receives the operator token. Discoverability, claiming and bookability are separate decisions.
+Publishes only a minimal factual shell for an unclaimed public record. A property card can start a claim, while every record offers an account-free correction/removal route. New-property and claim submissions collect a public point plus operating context and private contact data, bind the submission to the owner where applicable, and place it in a review state. No authenticated owner account or workspace is claimed live on the canonical customer production surface. That capability remains gated until TPTS operates its own identity boundary; a future workspace must scope records to the authenticated owner, remain separate from operator review and never expose operator credentials to the browser. Discoverability, claiming and bookability are separate decisions.
 
 ### Inventory and booking intent
 
@@ -117,7 +118,7 @@ Each transition adds evidence. Discoverable does not mean claimed, and claimed d
 
 ## Deployment posture
 
-The public pilot runs on an edge-hosted web runtime with managed configuration, encrypted transport, environment-scoped secrets and auditable data migrations. Its public discovery surface is separate from the private host-intake and operator boundaries. The public case study remains deliberately non-deployable; environment identifiers, credentials and operational runbooks are not disclosed here.
+The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-grid.pages.dev) on Cloudflare Pages. It uses managed configuration, encrypted transport, environment-scoped secrets and auditable data migrations. Its public discovery surface is separate from the private host-intake and operator boundaries. The public case study remains deliberately non-deployable; environment identifiers, credentials and operational runbooks are not disclosed here.
 
 ## External programme gates
 

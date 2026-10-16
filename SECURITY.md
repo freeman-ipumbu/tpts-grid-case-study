@@ -4,7 +4,7 @@
 
 This is a public case-study repository. It does not contain the production application, deployment configuration, credentials, customer data, payment code or private partner contracts. There is no runnable service in this repository.
 
-Security reports concerning the live TPTS Grid service, TPTS accounts, payment behaviour, private infrastructure or accidentally exposed information are nevertheless taken seriously.
+Security reports concerning the TPTS Grid customer production surface, payment behaviour, private infrastructure or accidentally exposed information are nevertheless taken seriously.
 
 ## Report privately
 
