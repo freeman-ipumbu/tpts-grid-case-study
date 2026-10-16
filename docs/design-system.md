@@ -1,6 +1,6 @@
 # Desert Signal design system
 
-Desert Signal is the public design direction for TPTS Grid: a map-native digital product with the confidence of financial infrastructure and the sensory character of Namibia.
+Desert Signal is the public design direction for TPTS Grid: a map-native digital product with the confidence of financial infrastructure and the sensory character of Namibia. Each section has one deliberate role: the opening creates desire, the Navigator creates orientation, the Atlas Lens creates trust and onboarding collects evidence.
 
 This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the 16 October 2026 discovery-pilot release.
 
@@ -65,6 +65,7 @@ Large display type uses tight tracking and disciplined line breaks. The mono fac
 - strong vertical sections make scroll position legible;
 - editorial asymmetry creates surprise without disturbing task flows;
 - thin lines and small data labels add precision;
+- the cinematic hero uses location-accurate Namibia imagery and a route signal, not a second live map;
 - map, imagery and copy overlap only when contrast and pointer behaviour remain unambiguous;
 - controls meet a 44 px minimum target, with 48 px preferred for primary actions.
 
@@ -81,11 +82,13 @@ Motion should feel like a vehicle settling onto a road: quick, weighted and purp
 
 Do not use endless parallax, decorative cursor trails, forced scroll sequences or animation that delays access to content.
 
-## Map language
+## One-map language
 
 The base map is context; the TPTS overlay is meaning.
 
-- **Field**, **Atlas** and **Signal** are visual modes over the same attributed map and product data; a style switch never changes a place's state;
+- the **Grid Navigator** is the sole always-available traveller map and preserves geographic context across **Discover**, **Build** and **Stays**;
+- Discover prioritises destination context, Build prioritises the traveller's ordered line and Stays prioritises factual property points and their synchronized records;
+- **Field**, **Atlas** and **Signal** are visual appearances over the same attributed map and product data; a style switch never changes a place's state;
 - destination anchors, unclaimed property points and a future bookable state remain visually and textually distinct;
 - a planned route uses a strong continuous signal, but is labelled as journey order rather than a navigable road line;
 - attribution remains visible;
@@ -94,11 +97,20 @@ The base map is context; the TPTS overlay is meaning.
 - loading, degraded and unavailable states are written in plain language;
 - a directory/list view remains usable without the map.
 
+Map restraint is part of the identity. The property directory uses an **Atlas Lens**—regional evidence, record counts and coverage gaps—instead of mounting another map. Owner onboarding mounts a separate precision map only after an explicit request and only to place or review one public-facing point. The two tools are scoped, labelled and never presented as alternate traveller maps.
+
 The current directory has 28 factual property records and 27 exact OSM points. Their marker treatment communicates “discoverable / unclaimed,” never availability. The remaining record keeps a null coordinate instead of showing a guessed pin.
 
-## Route Studio interaction language
+## Grid Navigator interaction language
 
-Route Studio begins empty and makes ownership of the plan visible:
+The Navigator changes controls through task lenses without moving the traveller into a different product:
+
+- Discover searches destinations and offers explicit routes into planning or nearby factual stays;
+- Build begins empty and makes ownership of the plan visible;
+- Stays keeps map selection and the factual result list synchronized;
+- story-led prompts and directory actions open the relevant lens directly.
+
+Within Build:
 
 - searching and adding are separate, explicit actions;
 - every stop has named move-earlier, move-later and remove controls;
@@ -133,9 +145,9 @@ Current implementation evidence includes a skip link, labelled map regions, keyb
 
 The phone layout is designed as a first-class task surface rather than a scaled desktop canvas:
 
-- the route map and sequence stack, and long route lists stop using nested scroll regions;
+- the Navigator map and active lens panel stack, and long route lists stop using nested scroll regions;
 - property and integration grids become single-column;
-- the mobile dock keeps Map, Route, Places and Host within reach and respects safe-area insets;
+- the mobile dock keeps Explore, Trip, Places and Host within reach, respects safe-area insets and yields while the host precision map is open;
 - primary tap targets expand to at least 44 px, with several navigation actions at 46–52 px;
 - form controls use 16 px text on phones and keep the onboarding steps readable;
 - non-selected marker labels simplify on narrow screens while selected context remains visible;

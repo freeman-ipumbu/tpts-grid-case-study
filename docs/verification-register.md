@@ -8,17 +8,20 @@ Last reviewed: **16 October 2026**
 
 | Subject | Evidence checked | Public statement supported |
 | --- | --- | --- |
-| Route Studio | Current product source and release walkthrough; [representative capture](../assets/tpts-grid-route-studio-live-2026-10-16.jpg) | Empty-start route editor with search, add, remove, reorder, trip name/nights, local save, deliberate share and non-navigation disclaimers. |
-| Map modes | Current production map configuration | Field, Atlas and Signal select three OpenFreeMap styles without changing product state or data. |
+| Grid Navigator | Current product source and release walkthrough | One shared traveller map with Discover, Build and Stays task lenses; lens changes preserve one geographic workspace while changing the active overlay and controls. |
+| Build lens | Current product source and release walkthrough; [earlier Route Studio capture](../assets/tpts-grid-route-studio-live-2026-10-16.jpg) retained as release history | Empty-start route editor with search, add, remove, reorder, trip name/nights, local save, deliberate share and non-navigation disclaimers. The linked image predates the unified Navigator information architecture. |
+| Map appearances | Current production map configuration | Field, Atlas and Signal select three OpenFreeMap styles without changing product state or data. |
+| Cinematic opening | Current product source and responsive walkthrough | Location-accurate Namibia imagery, route-signal motion and search/composer actions hand off into the relevant Navigator lens; no competing hero map is mounted. |
 | Public property index | Current factual directory module evaluated on 16 October 2026 | 28 records; 27 non-null exact OSM points; every record is unclaimed, has no inventory and is not represented as a TPTS partner. |
+| Atlas Lens | Current property-directory surface | Regional record distribution and coverage gaps replace the prior directory map; selected sets open in the Navigator's Stays lens. |
 | Claim and correction | Current directory cards and factual record pages | Every record has a claim path and an account-free correction/removal path. Claiming still requires authority verification. |
-| Owner onboarding | Current three-step form, validation contract and intake state machine | Public point and operating facts can enter a private `verification_required` queue; submission does not publish or create inventory. |
+| Owner onboarding | Current three-step form, validation contract and intake state machine | Public point and operating facts can enter a private `verification_required` queue; its precision map opens only on explicit request and submission does not publish or create inventory. |
 | Owner authentication and account access | Current customer-surface review and identity boundary | Gated pending TPTS-owned identity; no authenticated owner workspace is claimed live on the canonical Cloudflare customer surface. |
 | Integration launchpad | Current 15-record public readiness catalogue | One owned path, one attribution-ready public-data path, five apply paths, five evaluate paths and three restricted paths; no live connection claim. |
 | Payment boundary | Current readiness UI and server-side payment boundary | Partner diagnostics are read-only; live payment creation and automatic paid-state confirmation are disabled. |
 | Dependency audit | Current lockfile, pnpm 11.25.0, `pnpm audit --prod --json` and `pnpm audit --json` | Production scope reported 0 advisories. Full graph reported 34 development-path advisories: 15 high, 13 moderate, 6 low and 0 critical. |
 
-The screenshot is evidence of the rendered Route Studio surface only. It does not prove inventory, OTA access, merchant activation, payment success or accessibility conformance.
+The retained screenshot is evidence of the earlier rendered Route Studio surface only. It predates the unified Grid Navigator and does not prove current information architecture, inventory, OTA access, merchant activation, payment success or accessibility conformance.
 
 ## External programme and data sources
 

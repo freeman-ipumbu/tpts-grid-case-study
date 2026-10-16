@@ -15,25 +15,25 @@ The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-
 
 ## Current product snapshot
 
-The 16 October 2026 release centres on three connected surfaces:
+The 16 October 2026 release is organised around **one shared traveller map**, supported by two deliberately different evidence and host tools:
 
-- **Route Studio** starts with a clean canvas. A traveller can search real Namibian destination anchors, add up to 12 stops, remove or reorder them, name the trip, set its length, keep it in local browser storage and share it deliberately. Its connecting line shows journey order, not turn-by-turn navigation or live road conditions.
-- **Three map modes**—Field, Atlas and Signal—switch between attributed OpenFreeMap styles over OpenStreetMap data. They are visual lenses over the same product truth; changing the style does not change inventory or route facts.
-- **The real Namibia index** contains **28 factual public property records**, of which **27 have exact, individually attributed OpenStreetMap points**. All 28 are currently unclaimed directory records with no TPTS inventory, rate or availability attached.
+- **The Grid Navigator** keeps discovery, route composition and factual stay inspection in one geographic workspace. Its three task lenses—**Discover**, **Build** and **Stays**—change the controls and overlay, not the traveller's place in Namibia.
+- **Discover** searches 21 real Namibian destination anchors. **Build** lets a traveller add up to 12 stops, remove or reorder them, name the trip, set its length, keep it in local browser storage and share it deliberately. **Stays** filters and selects factual property points without inventing price, availability or partner status.
+- **The Atlas Lens** replaces a second directory map with a quieter regional evidence view: **28 factual public property records**, **27 exact, individually attributed OpenStreetMap points** and the distribution of those records across the represented regions.
+- **The owner precision map** is not another exploration surface. It stays closed until an operator explicitly opens it to place or review one public-facing point, with manual coordinates retained as a fallback.
+- **Field, Atlas and Signal** remain visual map appearances over the same attributed OpenFreeMap/OpenStreetMap context. A style change never alters route order, record state, inventory or trust.
 
 The public product also includes 21 geographic destination anchors. Destination anchors and property records are intentionally different datasets: one supports route context; the other provides a minimal, correctable path for a real property to be found and claimed.
 
-![TPTS Grid Route Studio showing an editable two-stop Namibia trip and a planning-line map](assets/tpts-grid-route-studio-live-2026-10-16.jpg)
-
-*Representative current-product capture, 16 October 2026. The screen demonstrates Route Studio and its planning-language boundary; it is not evidence of live room inventory, an OTA connection or payment activation.*
+The [previous standalone Route Studio capture](assets/tpts-grid-route-studio-live-2026-10-16.jpg) remains in this repository as release history. The current product folds that capability into the Grid Navigator; the image is not presented as the current information architecture or as evidence of live room inventory, an OTA connection or payment activation.
 
 ## Product truth at a glance
 
 | Surface | Current posture | What is deliberately not claimed |
 | --- | --- | --- |
-| Route Studio | Editable, locally saved trip order across real destination anchors | Turn-by-turn routing, live road conditions, availability or a reservation |
-| Map | Field, Atlas and Signal modes; accessible status and text fallbacks | That a map point is a partner or a bookable room |
-| Property directory | 28 independently checked factual records; 27 exact OSM points | Copied OTA descriptions, photos, ratings, reviews, prices or availability |
+| Grid Navigator | One traveller map with Discover, Build and Stays task lenses | Turn-by-turn routing, live road conditions, availability or a reservation |
+| Map appearance | Field, Atlas and Signal styles; accessible status and text fallbacks | That a style, marker or map point is a partner or a bookable room |
+| Atlas Lens and property directory | Regional evidence view plus 28 independently checked factual records; 27 exact OSM points | A duplicate exploration map; copied OTA descriptions, photos, ratings, reviews, prices or availability |
 | Property records | Official link, locality, source provenance, claim and correction paths | Operator control until authority has been verified |
 | Owner onboarding | A three-step private submission and verification queue | Automatic publication, verification or bookability |
 | Owner account access | Gated pending a TPTS-owned identity boundary | That owner authentication, an account workspace, operator controls, publication or inventory activation are live |
@@ -52,9 +52,16 @@ Grid exposes a simple public promise while keeping the operational gates explici
 
 Owners can start a claim from a property card or factual record page. Every record also offers a direct **correct / remove** route that does not require an account. A correction, ownership claim or removal request is a governance action, not a commercial conversion.
 
-## Route Studio: traveller-owned planning
+## The Grid Navigator: one map, three lenses
 
-Route Studio turns the route into the primary travel object without locking the traveller into an opaque generated itinerary.
+The Grid Navigator gives the map one clear job at a time without forcing the traveller to restart or jump between competing geographic surfaces.
+
+- **Discover** reads the country through searchable destination anchors, local context and direct actions to add a place or inspect nearby factual stays;
+- **Build** turns the route into the primary travel object without locking the traveller into an opaque generated itinerary;
+- **Stays** synchronises the map with the factual property ledger so selecting a marker or record updates the same focused context;
+- story-led route prompts, directory actions and the command palette deep-link into the relevant lens rather than opening another map.
+
+Within Build, travellers can:
 
 - search, add, remove and reorder real destination anchors;
 - change the trip name and number of nights;
@@ -63,7 +70,9 @@ Route Studio turns the route into the primary travel object without locking the 
 - retain a text-first editing surface when the basemap is degraded;
 - label direct-line distance and journey order honestly, with no road-kilometre or navigation claim.
 
-The main exploration surface can suggest a route from a brief such as coast, desert or wildlife. Suggestions remain editable and carry no inventory, price, road-safety or availability authority.
+The cinematic opening composer can suggest a route from a brief such as coast, desert or wildlife, then hands that suggestion into Build. The hero uses real Namibia imagery and an animated route thread instead of running a competing live map behind the primary task. Suggestions remain editable and carry no inventory, price, road-safety or availability authority.
+
+The Atlas Lens is intentionally not a fourth Navigator mode. It is a factual regional ledger that shows record concentration and gaps, then hands a selected set back to Stays when geography is useful.
 
 ## Property discovery and owner onboarding
 
@@ -71,7 +80,7 @@ The directory is intentionally factual and sparse. Public seed records use only 
 
 The owner path has three progressive steps:
 
-1. identify the property and set a public-facing map point, with manual coordinates as a fallback;
+1. identify the property and set a public-facing map point, with manual coordinates as a fallback; the precision map mounts only after an explicit operator action;
 2. provide operating context such as property type, room/unit count, website and traveller-relevant notes;
 3. provide private contact details, attest authority and submit to the TPTS verification queue.
 
@@ -135,8 +144,11 @@ The development findings remain release-engineering work: keep preview servers n
 
 ```mermaid
 flowchart LR
-    T[Traveller] --> R[Route Studio]
-    T --> D[Public place directory]
+    T[Traveller] --> N[Grid Navigator]
+    N --> E[Discover]
+    N --> R[Build]
+    N --> S[Stays]
+    T --> D[Atlas Lens + factual directory]
     O[Property operator] --> C[Claim or new private draft]
     C --> V[Authority verification]
     D --> U[Discoverable / unclaimed]
@@ -149,7 +161,7 @@ flowchart LR
     classDef live fill:#061b1c,stroke:#42d5bd,color:#fffdf7;
     classDef truth fill:#f5efe2,stroke:#ce6842,color:#061b1c;
     classDef gated fill:#fffdf7,stroke:#0d6872,color:#061b1c,stroke-dasharray:5 4;
-    class R,D,U,C,V live;
+    class N,E,R,S,D,U,C,V live;
     class T,O,K truth;
     class B,P,X gated;
 ```
@@ -158,7 +170,7 @@ Read the [public architecture notes](docs/architecture.md) for the data boundari
 
 ## Brand: Desert Signal
 
-The visual system combines Atlantic depth, dune warmth and precise route language. The Convergence Mark represents paths meeting in one navigable system. Map modes change atmosphere without changing truth, and motion yields to reduced-motion preferences.
+The visual system combines Atlantic depth, dune warmth and precise route language. The Convergence Mark represents paths meeting in one navigable system. A cinematic Namibia opening establishes place; the Grid Navigator handles geography; the Atlas Lens handles evidence; and the owner precision tool handles one coordinate. Map appearances change atmosphere without changing truth, and motion yields to reduced-motion preferences.
 
 See the [public design-system notes](docs/design-system.md).
 
@@ -168,10 +180,13 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 
 | Capability | Status on 16 October 2026 |
 | --- | --- |
-| Namibia destination map | Live; 21 public geographic anchors |
+| Grid Navigator | Live; one traveller map with Discover, Build and Stays lenses |
+| Namibia destination anchors | Live; 21 public geographic anchors |
 | Map appearance | Field, Atlas and Signal modes live |
-| Route Studio | Live; editable, local-first planning aid |
-| Factual property directory | Live; 28 records, 27 exact attributed OSM points |
+| Build lens | Live; editable, local-first planning aid |
+| Stays lens and factual property directory | Live; 28 records, 27 exact attributed OSM points |
+| Atlas Lens | Live; factual regional distribution view, not a second traveller map |
+| Owner precision map | Live on demand inside onboarding; one public-facing point only |
 | Claim, correction and removal paths | Live; claims still require authority verification |
 | Direct owner application | Live as a private verification-queue submission |
 | Owner authentication and account workspace | Gated; pending TPTS-owned identity and not live on the customer production surface |

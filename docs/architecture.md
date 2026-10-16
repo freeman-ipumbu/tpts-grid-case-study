@@ -13,11 +13,13 @@ The core product must still help a traveller discover Namibia, shape a route and
 As of 16 October 2026, the public product contains:
 
 - 21 destination anchors for geographic route context;
-- Route Studio with traveller-controlled search, add, remove, reorder, duration, local save and deliberate sharing;
-- three visual map modes—Field, Atlas and Signal—over the same underlying truth;
+- one Grid Navigator with Discover, Build and Stays task lenses over a shared traveller map;
+- traveller-controlled route search, add, remove, reorder, duration, local save and deliberate sharing inside Build;
+- three visual map appearances—Field, Atlas and Signal—over the same underlying truth;
 - 28 factual property directory records, including 27 exact OSM-sourced points;
+- an Atlas Lens that presents regional record distribution without mounting a duplicate directory map;
 - a claim path and an account-free correction/removal path for every public record;
-- private owner onboarding into a verification queue;
+- private owner onboarding into a verification queue, with its single-point precision map mounted only on request;
 - owner authentication and account visibility held behind a future TPTS-owned identity gate, not claimed as live;
 - a 15-path integration launchpad that records programme readiness, not connection status;
 - a payment readiness boundary with live creation and paid-state confirmation disabled.
@@ -28,8 +30,13 @@ Every current public property record is `unclaimed-directory` with `inventorySta
 
 ```mermaid
 flowchart LR
-    traveller[Traveller] -->|explores and edits| route[Route Studio]
-    traveller -->|reads factual records| directory[Public place directory]
+    traveller[Traveller] -->|explores, builds and inspects| navigator[Grid Navigator]
+    navigator --> discover[Discover lens]
+    navigator --> build[Build lens]
+    navigator --> stays[Stays lens]
+    traveller -->|reads regional evidence| atlas[Atlas Lens]
+    atlas -->|opens selected set| stays
+    stays -->|reads factual records| directory[Public place directory]
     host[Property operator] -->|claims or submits| onboarding[Private onboarding]
     host -. future authentication .-> ownerIdentity[TPTS-owned identity]
     ownerIdentity -. scoped account access .-> workspace[Owner workspace]
@@ -44,7 +51,7 @@ flowchart LR
     classDef core fill:#061b1c,stroke:#42d5bd,color:#fffdf7;
     classDef human fill:#f5efe2,stroke:#ce6842,color:#061b1c;
     classDef external fill:#fffdf7,stroke:#0d6872,color:#061b1c,stroke-dasharray:5 4;
-    class route,directory,onboarding,ops core;
+    class navigator,discover,build,stays,atlas,directory,onboarding,ops core;
     class traveller,host,claimed human;
     class maps,ownerIdentity,workspace,bookable,payment,channels external;
 ```
@@ -53,15 +60,15 @@ flowchart LR
 
 ### Experience layer
 
-Owns navigation, map interaction, route composition, accessible fallbacks and transparent state labels. Route Studio may suggest an itinerary, but every stop remains editable. Its line is journey order and direct-line context, not a road route. The experience must not fabricate a rate, room, road condition or partnership.
+Owns navigation, map interaction, route composition, accessible fallbacks and transparent state labels. The Grid Navigator keeps three tasks in one traveller map: Discover reads destination context, Build composes an editable trip and Stays inspects factual property signals. A cinematic opening composer may suggest an itinerary, but every stop remains editable. Its line is journey order and direct-line context, not a road route. Story cards, directory actions and search controls enter the relevant lens instead of creating more map instances. The experience must not fabricate a rate, room, road condition or partnership.
 
 ### Geographic intelligence
 
-Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. The three map modes change style, not meaning. Renderer, base-map source, route logic, factual property records and future inventory remain independent so one can change without corrupting the others.
+Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. The three Navigator lenses change task and overlay; Field, Atlas and Signal change appearance only. Renderer, base-map source, route logic, factual property records and future inventory remain independent so one can change without corrupting the others. The Atlas Lens is a non-map evidence view of regional record distribution, while the host precision map is an isolated, on-demand tool for setting one public point. Neither competes with the traveller map.
 
 ### Supply and verification
 
-Publishes only a minimal factual shell for an unclaimed public record. A property card can start a claim, while every record offers an account-free correction/removal route. New-property and claim submissions collect a public point plus operating context and private contact data, bind the submission to the owner where applicable, and place it in a review state. No authenticated owner account or workspace is claimed live on the canonical customer production surface. That capability remains gated until TPTS operates its own identity boundary; a future workspace must scope records to the authenticated owner, remain separate from operator review and never expose operator credentials to the browser. Discoverability, claiming and bookability are separate decisions.
+Publishes only a minimal factual shell for an unclaimed public record. A property card can start a claim, while every record offers an account-free correction/removal route. New-property and claim submissions collect a public point plus operating context and private contact data, bind the submission to the owner where applicable, and place it in a review state. The precision map is lazy and explicit: it opens only when an operator chooses to place or review that public point, and exact check-in directions can remain private. No authenticated owner account or workspace is claimed live on the canonical customer production surface. That capability remains gated until TPTS operates its own identity boundary; a future workspace must scope records to the authenticated owner, remain separate from operator review and never expose operator credentials to the browser. Discoverability, claiming and bookability are separate decisions.
 
 ### Inventory and booking intent
 
@@ -109,7 +116,7 @@ Each transition adds evidence. Discoverable does not mean claimed, and claimed d
 
 ## Resilience principles
 
-- **Map failure is not product failure.** Keep the route editor, text directory and manual coordinate entry available.
+- **Map failure is not product failure.** Keep the Build editor, synchronized text results, factual directory and manual coordinate entry available.
 - **Channel failure is not inventory loss.** Preserve a canonical TPTS record and explicit source provenance.
 - **Browser success is not payment success.** Only trusted server-side confirmation can settle a booking state.
 - **Generated advice is not operational truth.** Separate suggestions from live availability, policy and road-safety data.
