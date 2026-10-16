@@ -4,172 +4,192 @@
 > Book the road, not just the room.
 
 [![Case study](https://img.shields.io/badge/repository-public%20case%20study-42d5bd?style=flat-square&labelColor=061b1c)](#about-this-repository)
-[![Product status](https://img.shields.io/badge/product-private%20pilot-f1ae3f?style=flat-square&labelColor=061b1c)](#project-status)
-[![Namibia first](https://img.shields.io/badge/market-Namibia-ce6842?style=flat-square&labelColor=061b1c)](#the-namibia-native-thesis)
+[![Product status](https://img.shields.io/badge/product-discovery%20pilot-f1ae3f?style=flat-square&labelColor=061b1c)](#project-status)
+[![Snapshot](https://img.shields.io/badge/snapshot-16%20Oct%202026-ce6842?style=flat-square&labelColor=061b1c)](#current-product-snapshot)
 
-TPTS Grid is a Namibia-first travel network conceived for the whole journey: discovery, route thinking, direct property onboarding and a secure path to booking. It is designed around how Namibia is actually experienced—long roads, changing surfaces, sparse signal, destination clusters and the independent places that make the route worth travelling.
+TPTS Grid is a Namibia-first travel network for spatial discovery, traveller-owned route planning and direct property onboarding. Its current public release makes Namibia easier to explore without pretending that a sourced map record is a partner, that a route line is navigation, or that an integration pathway is live inventory.
 
-This is the public product case study. The production application, credentials, commercial agreements, infrastructure configuration and payment implementation remain in a private repository.
+This is the public product case study. The production source, credentials, commercial agreements, private host submissions and payment implementation are not published here.
 
-## At a glance
+## Current product snapshot
 
-| | |
-| --- | --- |
-| **Market** | Namibia, with a route to wider SADC relevance |
-| **Product** | Destination discovery, itinerary planning, property onboarding and booking orchestration |
-| **Core idea** | Treat the route—not only the room—as the primary travel object |
-| **Map** | Interactive Namibia map with real public destination anchors and TPTS-owned overlays |
-| **Supply model** | Direct host onboarding with verification before publication |
-| **Payments** | TPTS-controlled orchestration boundary; partner API verified, merchant payment activation separately gated |
-| **Experience design** | “Desert Signal”: editorial warmth, map intelligence and an unmistakably Namibian visual system |
+The 16 October 2026 release centres on three connected surfaces:
 
-## The Namibia-native thesis
+- **Route Studio** starts with a clean canvas. A traveller can search real Namibian destination anchors, add up to 12 stops, remove or reorder them, name the trip, set its length, keep it in local browser storage and share it deliberately. Its connecting line shows journey order, not turn-by-turn navigation or live road conditions.
+- **Three map modes**—Field, Atlas and Signal—switch between attributed OpenFreeMap styles over OpenStreetMap data. They are visual lenses over the same product truth; changing the style does not change inventory or route facts.
+- **The real Namibia index** contains **28 factual public property records**, of which **27 have exact, individually attributed OpenStreetMap points**. All 28 are currently unclaimed directory records with no TPTS inventory, rate or availability attached.
 
-Global booking products are excellent at selling a bed. Namibia asks for more context.
+The public product also includes 21 geographic destination anchors. Destination anchors and property records are intentionally different datasets: one supports route context; the other provides a minimal, correctable path for a real property to be found and claimed.
 
-A traveller may need to understand what comes before and after the stay: the next fuel stop, a realistic route sequence, the character of a gravel corridor, whether a detour improves the journey, and which independent place belongs on the map. At the same time, a small lodge, guest farm, campsite or community stay should not need enterprise software to become discoverable.
+![TPTS Grid Route Studio showing an editable two-stop Namibia trip and a planning-line map](assets/tpts-grid-route-studio-live-2026-10-16.jpg)
 
-Grid turns those constraints into product advantages:
+*Representative current-product capture, 16 October 2026. The screen demonstrates Route Studio and its planning-language boundary; it is not evidence of live room inventory, an OTA connection or payment activation.*
 
-- **The route is the interface.** Places become part of a coherent journey rather than isolated cards in a catalogue.
-- **Local supply can enter directly.** A guided onboarding flow lets a host submit a place and pin its location; publication remains subject to verification.
-- **Geography is product data.** Destination anchors, corridors and planning context are kept distinct from bookable inventory.
-- **Trust is visible.** The interface distinguishes directories, applications, verified places and live inventory instead of implying availability that does not exist.
-- **Local control matters.** TPTS retains the customer experience and orchestration layer while external channels remain optional, governed integrations.
+## Product truth at a glance
 
-## Experience pillars
+| Surface | What is implemented or publicly present | What is deliberately not claimed |
+| --- | --- | --- |
+| Route Studio | Editable, locally saved trip order across real destination anchors | Turn-by-turn routing, live road conditions, availability or a reservation |
+| Map | Field, Atlas and Signal modes; accessible status and text fallbacks | That a map point is a partner or a bookable room |
+| Property directory | 28 independently checked factual records; 27 exact OSM points | Copied OTA descriptions, photos, ratings, reviews, prices or availability |
+| Property records | Official link, locality, source provenance, claim and correction paths | Operator control until authority has been verified |
+| Owner onboarding | A three-step private submission and verification queue | Automatic publication, verification or bookability |
+| Owner workspace | A signed-in, read-only view of applications tied to the verified account | Editing, operator review controls, inventory activation or access to other owners' records |
+| Integration launchpad | 15 public programme paths classified by readiness | Credentials, approval, signed agreements or live production access |
+| Payments | A guarded server-side architecture and readiness boundary | Live payment creation or automatic paid-state confirmation |
 
-### 01 · Explore Namibia spatially
+## From discoverable to claimed to bookable
 
-Grid opens on a real map, not a generic search form. TPTS overlays connect public destination anchors into legible travel corridors. Every public pin is labelled honestly: a destination anchor is not automatically a property, partner or live room.
+Grid exposes a simple public promise while keeping the operational gates explicit.
 
-### 02 · Compose a journey
+| Public truth state | Evidence required | Current meaning |
+| --- | --- | --- |
+| **Discoverable** | Independently checked name, locality, official website and source provenance | A factual directory shell. It is unclaimed, not a TPTS partnership and not bookable. All 28 current public records are here. |
+| **Claimed** | Verified authority to represent the property plus owner-licensed content | The operator can maintain its truth. Claiming does not create inventory, a rate or a booking channel. |
+| **Bookable** | Claimed property, activated and fresh inventory, policies, commercial approval and an approved payment/reconciliation path | A separately gated future state. No current public directory record is presented as bookable. |
 
-Travellers can express intent—coast, desert, wildlife, southern route, remote country—and receive a reversible route suggestion. The interface explains its changes and never presents generated guidance as live inventory, road-condition advice or confirmed availability.
+Owners can start a claim from a property card or factual record page. Every record also offers a direct **correct / remove** route that does not require an account. A correction, ownership claim or removal request is a governance action, not a commercial conversion.
 
-### 03 · Let places join the Grid
+## Route Studio: traveller-owned planning
 
-Property owners can describe a place, identify its location and submit contact details through a short, progressive workflow. New submissions enter a verification queue. Nothing is silently published and no relationship with a third-party marketplace is implied.
+Route Studio turns the route into the primary travel object without locking the traveller into an opaque generated itinerary.
 
-### 04 · Make payment a trust boundary
+- search, add, remove and reorder real destination anchors;
+- change the trip name and number of nights;
+- see an optional, explainable suggestion that can be accepted or undone;
+- store the draft locally on the device and share only on request;
+- retain a text-first editing surface when the basemap is degraded;
+- label direct-line distance and journey order honestly, with no road-kilometre or navigation claim.
 
-The experience owns the booking intent and total; sensitive card entry belongs on an approved provider-controlled surface. A booking cannot become paid merely because a browser reports success. TPTS has verified the partner API connection against the permitted read-only services endpoint, while payment creation remains locked behind a separately authorised merchant profile, server-side secret configuration and independent security review.
+The main exploration surface can suggest a route from a brief such as coast, desert or wildlife. Suggestions remain editable and carry no inventory, price, road-safety or availability authority.
 
-### 05 · Connect selectively
+## Property discovery and owner onboarding
 
-Grid is designed to stand on its own. Approved channel connections can extend demand or inventory reach without becoming the product's identity.
+The directory is intentionally factual and sparse. Public seed records use only independently checked names, localities, regions, official websites and sourced coordinates. They do not reproduce third-party photography, logos, descriptions, ratings, reviews, room types, prices or availability.
+
+The owner path has three progressive steps:
+
+1. identify the property and set a public-facing map point, with manual coordinates as a fallback;
+2. provide operating context such as property type, room/unit count, website and traveller-relevant notes;
+3. provide private contact details, attest authority and submit to the TPTS verification queue.
+
+Contact details and verification evidence remain private. Marketing consent is separate and optional. A submitted draft enters `verification_required`; it is not silently published and cannot become bookable without later inventory activation.
+
+In the current source, a signed-in owner can use the read-only owner workspace to follow applications attached to that verified account. The workspace reads the existing application records; it does not edit them, publish owner content, verify authority or activate inventory. Identity is checked at the server boundary; on ordinary Pages and other non-Sites deployments the account view fails closed, and the browser never receives or uses the operator review token.
+
+## Safe integration launchpad
+
+Grid exposes an integration research surface, not an integration trophy case. The launchpad was reviewed on **16 October 2026** and classifies 15 paths without asserting credentials or production access.
+
+| Stage | Paths | Meaning |
+| --- | --- | --- |
+| **Owned** | TPTS Direct | The canonical discovery, claim and future native-inventory direction belongs to TPTS. |
+| **Ready with attribution** | OpenStreetMap + Wikidata | Public facts and geographic provenance only; never availability or partner status. |
+| **Apply** | Booking.com Demand, Expedia Rapid, Hostelworld, ResRequest ResConnect, NightsBridge | A public application, affiliate, NDA/audit or commercial relationship path exists. TPTS approval is not claimed. |
+| **Evaluate** | Hotelbeds / HBX, Google Hotel Center, Travelgate Hotel-X, Channex, Wetu | Technically relevant later paths whose value depends on agreements, certification and a mature native inventory model. |
+| **Restricted** | Booking.com Connectivity, Amadeus Hotels, Airbnb | Intake or access constraints make these unsuitable as launch dependencies. |
+
+The UI links each card to an official programme page and states the next legitimate action. It does not scrape inventory, invent partner status or place an external channel inside the canonical TPTS record. See the dated [public verification register](docs/verification-register.md).
+
+## Payment is a hard boundary
+
+TPTS Flow models how a future checkout must be controlled without claiming that checkout is live today:
+
+- totals, currency and merchant references originate on the server;
+- the current OneGate partner profile is limited to the authorised read-only services check and is not a merchant payment profile;
+- live payment creation remains disabled until a distinct merchant-scoped organisation ID and API salt, supported currency, compliance approval and an operational runbook are in place;
+- when enabled, sensitive card or banking entry belongs on the provider-controlled surface, not in TPTS screens, logs or storage;
+- a redirect, browser callback or success-looking screen can never mark a booking paid;
+- automatic confirmation remains disabled until a documented provider-originated verification mechanism is implemented, replay-safe and reviewed.
+
+There is **no claim of live payment processing** in this case study.
+
+## Responsive, accessible and mobile work
+
+The October release includes implementation work for keyboard, assistive-technology and phone use. This is an engineering baseline, not an accessibility certification.
+
+- semantic landmarks, a skip link, labelled regions and meaningful control names;
+- keyboard-operable destination markers and a trapped, restorable command dialog;
+- `aria-live` status for map, route, submission and readiness changes;
+- visible text labels alongside colour-coded states;
+- reduced-motion handling for map movement, reveals and decorative animation;
+- a synchronized directory and manual-coordinate alternative when the map cannot be used;
+- a dedicated mobile dock, safe-area handling, single-column property and integration views, and 44–52 px primary touch targets at phone breakpoints;
+- 16 px mobile form text to avoid focus zoom, scrollable long dialogs and simplified map labels on narrow screens;
+- lazy loading for secondary map instances and a same-origin MapLibre worker plus a network-free fallback style.
+
+## Dependency health snapshot
+
+The product lockfile was audited on **16 October 2026** with pnpm 11.25.0. The result is intentionally reported in two scopes:
+
+| Audit scope | Result | Interpretation |
+| --- | --- | --- |
+| `pnpm audit --prod --json` | 0 known advisories across the production dependency set reported by pnpm | No registry advisory was reported for the installable production graph at audit time. This is not a guarantee of absence. |
+| `pnpm audit --json` | 34 advisories: 15 high, 13 moderate, 6 low, 0 critical | The full development/build graph is **not clean**. Every reported finding was marked as a development dependency path, including transitive build and local-server tooling. |
+
+The development findings remain release-engineering work: keep preview servers non-public, update or override affected transitive packages when compatible releases exist, rerun the full audit after every lockfile change, and do not describe the product as “zero vulnerability.” The full product-side record is maintained with the private source because registry results change over time.
 
 ## Public architecture view
 
 ```mermaid
 flowchart LR
-    T[Traveller] --> E[Grid experience]
-    H[Namibian host] --> O[Onboarding + verification]
-    E --> M[Map + route intelligence]
-    E --> B[Booking orchestration]
-    O --> I[Verified TPTS inventory]
-    I --> B
-    B --> P[Approved payment provider]
-    E -. approved programme .-> D[Demand channels]
-    I -. approved connectivity .-> S[Supply channels]
+    T[Traveller] --> R[Route Studio]
+    T --> D[Public place directory]
+    O[Property operator] --> C[Claim or new private draft]
+    C --> V[Authority verification]
+    D --> U[Discoverable / unclaimed]
+    U --> C
+    V --> K[Claimed / owner-maintained]
+    K -. inventory + policy + commercial gates .-> B[Bookable]
+    B -. merchant + verification gates .-> P[Provider-hosted payment]
+    B -. approved adapter only .-> X[External channel]
 
-    classDef core fill:#061b1c,stroke:#42d5bd,color:#fffdf7;
-    classDef human fill:#f5efe2,stroke:#ce6842,color:#061b1c;
-    classDef external fill:#fffdf7,stroke:#0d6872,color:#061b1c,stroke-dasharray:5 4;
-    class E,M,B,O,I core;
-    class T,H human;
-    class P,D,S external;
+    classDef live fill:#061b1c,stroke:#42d5bd,color:#fffdf7;
+    classDef truth fill:#f5efe2,stroke:#ce6842,color:#061b1c;
+    classDef gated fill:#fffdf7,stroke:#0d6872,color:#061b1c,stroke-dasharray:5 4;
+    class R,D,U,C,V live;
+    class T,O,K truth;
+    class B,P,X gated;
 ```
 
-The production design separates experience, inventory, payment orchestration and external channels. That separation is deliberate: it limits coupling, makes provenance visible and allows a channel to be added—or removed—without rebuilding the core journey.
-
-Read the [public architecture notes](docs/architecture.md) for the boundaries and data classifications that can safely be disclosed.
-
-## Verified external pathways
-
-These are programme pathways, not claims that a production connection is already enabled. Status was last checked on **15 October 2026** against the providers' official public documentation.
-
-| Pathway | What is publicly verified | Current Grid position |
-| --- | --- | --- |
-| [Booking.com Demand API](https://developers.booking.com/demand/docs/getting-started/prerequisites) | Access requires registration as a Managed Affiliate Partner, Partner Centre access and issued API credentials. Supported product flows range from content/redirect to integrated booking, subject to approval. | Application and commercial approval required; no credential or live-inventory claim is made here. |
-| [Booking.com Connectivity](https://connect.booking.com/?lang=en) | The portal supports property, rates, availability and reservation connectivity, but currently states that new connectivity-provider integrations are paused. Individual properties are directed to existing channel managers. | Monitor the intake pause; do not design the core platform around an unavailable approval path. |
-| [Expedia Group lodging connectivity](https://developers.expediagroup.com/supply/lodging) | Expedia publishes a five-stage path: contact, PCI/licence review, consultation, development and testing, then go-live. Direct API connections from individual properties are not accepted. | Prepare a provider application and compliance pack; enable only after programme acceptance. |
-| [CallPay merchant integration](https://www.callpay.com/merchant-general-terms/) | CallPay's public merchant terms state that service-specific Integration Documents are supplied after merchant acceptance. | The documented partner API connection has been verified for its permitted scope. Payment creation stays disabled until a distinct merchant-scoped profile, currency support and compliance obligations are confirmed. |
-
-No API key, affiliate identifier, merchant credential, webhook contract or proprietary request shape is included in this repository.
+Read the [public architecture notes](docs/architecture.md) for the data boundaries and transition rules that can safely be disclosed.
 
 ## Brand: Desert Signal
 
-The visual language rejects the usual collage of stock dunes, generic safari gold and floating white cards. Instead, it combines three Namibian signals:
-
-- **Atlantic depth** — dark teal and fog tones evoke the coast and give the map a confident night-mode foundation.
-- **Desert warmth** — dune clay and sun accents add humanity without turning the product into a tourism cliché.
-- **Route intelligence** — a compact data typeface, measured overlays and a convergence mark make movement visible.
-
-The logo concept is a **Convergence Mark**: multiple paths meeting in one navigable system. The wordmark is direct and geometric; the motion language feels spring-loaded and alive, but always yields to reduced-motion preferences.
+The visual system combines Atlantic depth, dune warmth and precise route language. The Convergence Mark represents paths meeting in one navigable system. Map modes change atmosphere without changing truth, and motion yields to reduced-motion preferences.
 
 See the [public design-system notes](docs/design-system.md).
 
-## Trust by design
-
-Grid's public product commitments are straightforward:
-
-- server-owned booking totals and references;
-- provider-hosted entry for sensitive payment details;
-- verified provider confirmation before a paid state is recorded;
-- encrypted transport and secrets kept outside browser code and version control;
-- least-privilege access for operational tools;
-- explicit state labels for destination anchors, applicants, verified places and live inventory;
-- data minimisation and purpose-limited collection;
-- user-triggered location access with a manual alternative;
-- a human verification gate before host submissions become public.
-
-The operative privacy terms belong to [TPTS Namibia](https://www.tptsnam.com/privacy-policy/). Security concerns should follow [SECURITY.md](SECURITY.md), never a public issue.
-
-## Accessibility and resilient performance
-
-The product is designed for keyboards, assistive technology, small screens and variable connectivity from the beginning:
-
-- semantic landmarks, a skip link and visible focus states;
-- labelled dialogs and controls, focus trapping and focus restoration;
-- status copy that does not rely on colour alone;
-- reduced-motion support for animation and programmatic scrolling;
-- minimum touch targets and responsive layouts tested around phone viewports;
-- map controls paired with a text directory and manual coordinate fallback;
-- lazy loading for secondary map surfaces;
-- local font assets and a static visual fallback if the network map cannot load;
-- progressive disclosure so complex host and trip-planning tasks remain comprehensible.
-
-The map uses [MapLibre GL JS](https://maplibre.org/) with [OpenFreeMap](https://openfreemap.org/) styles and [OpenStreetMap contributors](https://www.openstreetmap.org/copyright). A production-scale deployment can replace the public style endpoint with TPTS-controlled Namibia tiles without coupling that choice to inventory or routing.
-
 ## Project status
 
-Grid is a **private pilot / production candidate**, not a promise of a fully live marketplace.
+Grid is a **live production discovery and onboarding pilot**, not a live accommodation marketplace.
 
-| Capability | Status |
+| Capability | Status on 16 October 2026 |
 | --- | --- |
-| Namibia map and public destination directory | Implemented |
-| Intent-led route composition | Implemented; planning aid only |
-| Direct host application flow | Implemented with verification gating |
-| Persistent operational data layer | Implemented in the private application |
-| OneGate / CallPay partner API | Verified against the permitted read-only services endpoint |
-| Payment safety boundary | Implemented; merchant-scoped payment activation gated |
-| Booking.com Demand API | Path verified; application not represented as approved |
-| Booking.com supply connectivity | New-provider intake publicly paused |
-| Expedia Group lodging connectivity | Path verified; application/approval required |
-| Commercial inventory and live availability | Planned; activation requires verified properties, inventory and approved channels |
+| Namibia destination map | Live; 21 public geographic anchors |
+| Map appearance | Field, Atlas and Signal modes live |
+| Route Studio | Live; editable, local-first planning aid |
+| Factual property directory | Live; 28 records, 27 exact attributed OSM points |
+| Claim, correction and removal paths | Live; claims still require authority verification |
+| Direct owner application | Live as a private verification-queue submission |
+| Signed-in owner workspace | Implemented as a read-only account view; requires trusted Sites identity at runtime |
+| Claimed owner-managed public records | Gated by verification; not represented as current inventory |
+| Commercial inventory and OTA availability | Not live |
+| Integration launchpad | Live as programme research and readiness guidance only |
+| OneGate / CallPay partner diagnostic | Verified only for its permitted read-only scope |
+| Live payment creation and paid-state confirmation | Disabled |
 
 ## Links
 
-- **Launch URL:** [tpts-grid.pages.dev](https://tpts-grid.pages.dev) *(live production discovery and onboarding pilot)*
+- **Pilot:** [tpts-grid.pages.dev](https://tpts-grid.pages.dev)
 - **TPTS Namibia:** [tptsnam.com](https://www.tptsnam.com/)
 - **TPTS privacy policy:** [tptsnam.com/privacy-policy](https://www.tptsnam.com/privacy-policy/)
-- **Product enquiries:** [info@tptsnam.com](mailto:info@tptsnam.com)
+- **Product enquiries and correction requests:** [info@tptsnam.com](mailto:info@tptsnam.com)
 - **Experience portfolio:** [SolarSpin Technologies](https://solarspin-namibia.pages.dev/)
 
 ## About this repository
 
-This repository exists to document the thinking, public architecture and design decisions behind TPTS Grid. It is intentionally **not** the production source tree and cannot be used to deploy, operate or reproduce the service.
+This repository documents the public product, architecture and design decisions behind TPTS Grid. It is intentionally **not** the production source tree and cannot be used to deploy, operate or reproduce the service.
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a correction. This repository is publicly viewable but not open source; see [LICENSE](LICENSE).
 

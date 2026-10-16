@@ -2,7 +2,7 @@
 
 Desert Signal is the public design direction for TPTS Grid: a map-native digital product with the confidence of financial infrastructure and the sensory character of Namibia.
 
-This is a rationale and token reference, not a distributable copy of the production interface or logo artwork.
+This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the 16 October 2026 discovery-pilot release.
 
 ## Brand idea
 
@@ -85,13 +85,28 @@ Do not use endless parallax, decorative cursor trails, forced scroll sequences o
 
 The base map is context; the TPTS overlay is meaning.
 
-- destination anchors are visually distinct from live properties;
-- a planned route uses a strong continuous signal, while suggestions can use a lighter or dashed treatment;
+- **Field**, **Atlas** and **Signal** are visual modes over the same attributed map and product data; a style switch never changes a place's state;
+- destination anchors, unclaimed property points and a future bookable state remain visually and textually distinct;
+- a planned route uses a strong continuous signal, but is labelled as journey order rather than a navigable road line;
 - attribution remains visible;
 - selected markers provide a corresponding text label and detail surface;
 - zoom controls are keyboard operable;
 - loading, degraded and unavailable states are written in plain language;
 - a directory/list view remains usable without the map.
+
+The current directory has 28 factual property records and 27 exact OSM points. Their marker treatment communicates “discoverable / unclaimed,” never availability. The remaining record keeps a null coordinate instead of showing a guessed pin.
+
+## Route Studio interaction language
+
+Route Studio begins empty and makes ownership of the plan visible:
+
+- searching and adding are separate, explicit actions;
+- every stop has named move-earlier, move-later and remove controls;
+- trip name and nights are ordinary editable fields;
+- the optional Grid Guide explains a suggestion and offers a reversible action;
+- local saving and sharing are described separately;
+- direct-line kilometres carry an asterisk and plain-language warning;
+- inventory, price and road-condition authority never appear in the planning surface.
 
 ## Imagery
 
@@ -111,6 +126,23 @@ The visual identity is successful only if the product remains operable:
 - honour `prefers-reduced-motion`;
 - pair geolocation with an explicit consent action and a manual alternative;
 - never encode availability, payment or verification solely in colour.
+
+Current implementation evidence includes a skip link, labelled map regions, keyboard marker buttons, `aria-live` status messages, focus containment/restoration for the command dialog and reduced-motion handling for map movement and decorative reveals. These measures are a maintained baseline, not a claim of formal accessibility certification.
+
+## Responsive and mobile contract
+
+The phone layout is designed as a first-class task surface rather than a scaled desktop canvas:
+
+- the route map and sequence stack, and long route lists stop using nested scroll regions;
+- property and integration grids become single-column;
+- the mobile dock keeps Map, Route, Places and Host within reach and respects safe-area insets;
+- primary tap targets expand to at least 44 px, with several navigation actions at 46–52 px;
+- form controls use 16 px text on phones and keep the onboarding steps readable;
+- non-selected marker labels simplify on narrow screens while selected context remains visible;
+- property fact panels, provenance and claim/correction actions reflow without removing truth labels;
+- long dialogs use viewport-aware maximum heights and scrolling.
+
+The breakpoint work is implementation evidence, not a substitute for ongoing device, keyboard, screen-reader, contrast and zoom testing.
 
 ## Attribution
 

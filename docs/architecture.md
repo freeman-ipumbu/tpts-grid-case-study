@@ -6,58 +6,79 @@ This document explains TPTS Grid at a system-boundary level. It intentionally om
 
 Grid is organised around one principle: **TPTS owns the journey while integrations remain replaceable edges**.
 
-The core product must still help a traveller discover Namibia, shape a route and find verified local supply when a global channel is unavailable. External demand, supply and payment providers extend that system through explicit approval gates; they do not define its internal model.
+The core product must still help a traveller discover Namibia, shape a route and let a legitimate operator claim or add a place when a global channel is unavailable. External demand, supply and payment providers can extend that system only through explicit approval gates; they do not define its internal model.
+
+## Current public footprint
+
+As of 16 October 2026, the public product contains:
+
+- 21 destination anchors for geographic route context;
+- Route Studio with traveller-controlled search, add, remove, reorder, duration, local save and deliberate sharing;
+- three visual map modes—Field, Atlas and Signal—over the same underlying truth;
+- 28 factual property directory records, including 27 exact OSM-sourced points;
+- a claim path and an account-free correction/removal path for every public record;
+- private owner onboarding into a verification queue;
+- a read-only signed-in owner workspace for application status, scoped to the verified account;
+- a 15-path integration launchpad that records programme readiness, not connection status;
+- a payment readiness boundary with live creation and paid-state confirmation disabled.
+
+Every current public property record is `unclaimed-directory` with `inventoryStatus: none` and `relationshipStatus: not-a-tpts-partner` in the product source. Those fields are a deliberate public contract, not placeholder marketing copy.
 
 ## System context
 
 ```mermaid
 flowchart LR
-    traveller[Traveller] -->|explores and plans| grid[TPTS Grid]
-    host[Property host] -->|submits a place| grid
-    ops[TPTS operations] -->|verifies and supports| grid
-    grid -->|renders attributed geography| maps[Open mapping ecosystem]
-    grid -->|creates secure handoff| payment[Approved payment provider]
-    grid -.->|connects only when approved| channels[Travel channels]
+    traveller[Traveller] -->|explores and edits| route[Route Studio]
+    traveller -->|reads factual records| directory[Public place directory]
+    host[Property operator] -->|claims or submits| onboarding[Private onboarding]
+    host -->|reads own application status| workspace[Owner workspace]
+    workspace -->|server-scoped GET| onboarding
+    onboarding -->|human review| ops[TPTS verification]
+    directory -->|attributed facts| maps[Open mapping ecosystem]
+    ops --> claimed[Claimed owner record]
+    claimed -. inventory + policy gates .-> bookable[Bookable record]
+    bookable -. merchant + verification gates .-> payment[Provider-hosted payment]
+    bookable -. approved adapter only .-> channels[Travel channels]
 
     classDef core fill:#061b1c,stroke:#42d5bd,color:#fffdf7;
     classDef human fill:#f5efe2,stroke:#ce6842,color:#061b1c;
     classDef external fill:#fffdf7,stroke:#0d6872,color:#061b1c,stroke-dasharray:5 4;
-    class grid core;
-    class traveller,host,ops human;
-    class maps,payment,channels external;
+    class route,directory,onboarding,workspace,ops core;
+    class traveller,host,claimed human;
+    class maps,bookable,payment,channels external;
 ```
 
 ## Capability boundaries
 
 ### Experience layer
 
-Owns navigation, map interaction, route composition, accessible fallbacks and transparent state labels. It can suggest an itinerary, but it must not fabricate a rate, room, road condition or partnership.
+Owns navigation, map interaction, route composition, accessible fallbacks and transparent state labels. Route Studio may suggest an itinerary, but every stop remains editable. Its line is journey order and direct-line context, not a road route. The experience must not fabricate a rate, room, road condition or partnership.
 
 ### Geographic intelligence
 
-Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. Renderer, base-map source, route logic and inventory remain independent so one can change without corrupting the others.
+Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. The three map modes change style, not meaning. Renderer, base-map source, route logic, factual property records and future inventory remain independent so one can change without corrupting the others.
 
 ### Supply and verification
 
-Accepts a minimal property application, binds it to the authenticated submitter where applicable, and places it in a review state. Publication, claiming and bookability are separate decisions. This protects both travellers and legitimate property owners.
+Publishes only a minimal factual shell for an unclaimed public record. A property card can start a claim, while every record offers an account-free correction/removal route. New-property and claim submissions collect a public point plus operating context and private contact data, bind the submission to the owner where applicable, and place it in a review state. A signed-in owner workspace reads only the existing applications attached to the verified account. It has no mutation or operator-review capability; the account view fails closed outside the trusted Sites identity boundary and the browser never receives the operator token. Discoverability, claiming and bookability are separate decisions.
 
 ### Inventory and booking intent
 
-Represents verified TPTS supply and the traveller's intended stay. Prices, availability and policy terms require source provenance and a freshness rule. The browser never gets authority to declare its own total or payment outcome.
+Represents a future verified TPTS supply ledger and the traveller's intended stay. Prices, availability and policy terms require source provenance and a freshness rule. No live OTA or native inventory is represented in the current directory. The browser never gets authority to declare its own total or payment outcome.
 
 ### Payment orchestration
 
-Creates the provider handoff from a server-owned booking intent. Sensitive payment entry should remain on a provider-controlled surface. A final payment state requires a verified provider-originated confirmation and replay-safe processing. The exact provider protocol is private and contract-dependent.
+The implemented boundary is prepared to create a provider handoff from a server-owned booking intent, but live creation is disabled. The existing partner diagnostic scope is read-only and cannot be reused as a merchant payment profile. When separately authorised, sensitive payment entry should remain on a provider-controlled surface. A final payment state requires verified provider-originated confirmation and replay-safe processing; browser redirects and callbacks cannot settle it.
 
 ### Channel adapters
 
-Translate approved partner programmes into the Grid model without leaking provider-specific assumptions into the traveller experience. Demand access and supply connectivity are different products and must not be described as interchangeable.
+The launchpad records 15 owned, public-data, demand, supply and distribution paths by readiness stage. It does not prove that an adapter, credential, approval or agreement exists. Future approved adapters must translate into the Grid model without leaking provider-specific assumptions into the traveller experience. Demand access and supply connectivity are different products and must not be described as interchangeable.
 
 ## Data classifications
 
 | Class | Examples | Public case-study treatment |
 | --- | --- | --- |
-| Public geography | Town names, public coordinates, corridor labels | May be documented with source attribution |
+| Public geography | Town names, destination coordinates, OSM property points, corridor labels | May be documented with source attribution and a correction path |
 | Public product content | Brand language, feature descriptions, non-sensitive status | May be documented accurately |
 | Operational | Verification notes, internal moderation state, support history | Private |
 | Personal | Host contact details, traveller identity, location permission data | Private; collect minimally |
@@ -68,22 +89,26 @@ Translate approved partner programmes into the Grid model without leaking provid
 
 ```mermaid
 stateDiagram-v2
-    [*] --> DestinationAnchor: public geography
-    DestinationAnchor --> AppliedPlace: host submits
-    AppliedPlace --> VerificationRequired: validation succeeds
-    VerificationRequired --> VerifiedPlace: human checks completed
+    [*] --> Discoverable: factual public shell
+    Discoverable --> CorrectionReview: correct or remove request
+    CorrectionReview --> Discoverable: fact corrected
+    CorrectionReview --> Removed: removal accepted
+    Discoverable --> VerificationRequired: operator claims record
+    [*] --> VerificationRequired: operator submits new place
+    VerificationRequired --> Claimed: authority verified
     VerificationRequired --> NeedsChanges: evidence incomplete
-    NeedsChanges --> VerificationRequired: host resubmits
-    VerifiedPlace --> LiveInventory: commercial + operational activation
-    LiveInventory --> Paused: host or operator pauses
-    Paused --> LiveInventory: revalidated
+    VerificationRequired --> Rejected: authority not established
+    NeedsChanges --> VerificationRequired: operator resubmits
+    Claimed --> Bookable: inventory + policy + commercial gates
+    Bookable --> Paused: operator or TPTS pauses
+    Paused --> Bookable: evidence revalidated
 ```
 
-Each transition adds evidence. A public map pin never skips directly to “bookable”.
+Each transition adds evidence. Discoverable does not mean claimed, and claimed does not mean bookable. A public map pin never skips directly to live inventory.
 
 ## Resilience principles
 
-- **Map failure is not product failure.** Keep a text directory and manual coordinate entry available.
+- **Map failure is not product failure.** Keep the route editor, text directory and manual coordinate entry available.
 - **Channel failure is not inventory loss.** Preserve a canonical TPTS record and explicit source provenance.
 - **Browser success is not payment success.** Only trusted server-side confirmation can settle a booking state.
 - **Generated advice is not operational truth.** Separate suggestions from live availability, policy and road-safety data.
@@ -92,7 +117,7 @@ Each transition adds evidence. A public map pin never skips directly to “booka
 
 ## Deployment posture
 
-The product is intended for an edge-hosted web runtime with a private source repository, managed configuration, encrypted transport, environment-scoped secrets and auditable data migrations. The public case study is deliberately non-deployable. Environment topology, account identifiers and operational runbooks are not disclosed here.
+The public pilot runs on an edge-hosted web runtime with managed configuration, encrypted transport, environment-scoped secrets and auditable data migrations. Its public discovery surface is separate from the private host-intake and operator boundaries. The public case study remains deliberately non-deployable; environment identifiers, credentials and operational runbooks are not disclosed here.
 
 ## External programme gates
 
@@ -103,6 +128,6 @@ Partner-facing work follows a consistent sequence:
 3. receive provider-issued access and current specifications;
 4. implement against a sandbox or certification environment;
 5. test failure, cancellation, reconciliation and support paths;
-6. obtain production approval before surfacing a live status.
+6. obtain production approval and complete reconciliation/support runbooks before surfacing a live status.
 
-See the official paths linked in the [main case study](../README.md#verified-external-pathways). Public documentation is informative; the executed agreement and provider-issued implementation material govern a live integration.
+See the readiness stages in the [main case study](../README.md#safe-integration-launchpad) and the official sources in the [verification register](verification-register.md). Public documentation is informative; the executed agreement and provider-issued implementation material govern a live integration.

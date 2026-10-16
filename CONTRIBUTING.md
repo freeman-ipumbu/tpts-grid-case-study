@@ -27,8 +27,9 @@ This repository is a **public product showcase**, not the production application
 1. Keep the change focused on the case study.
 2. Link to an authoritative public source for factual changes.
 3. Confirm the contribution contains no personal, financial, confidential or security-sensitive information.
-4. Preserve the distinction between a destination anchor, an applicant, a verified property and live bookable inventory.
-5. Do not add third-party logos or copyrighted media without documented permission.
+4. Preserve the distinction between a destination anchor and a property record, and between discoverable, claimed and bookable truth states.
+5. Treat every current public property record as unclaimed and non-bookable unless a later, dated product audit proves otherwise.
+6. Do not add third-party logos or copyrighted media without documented permission.
 
 By contributing, you confirm that you have the right to submit the material and permit TPTS Financial Technology Group to use it in this case study. Acceptance is at the maintainers' discretion and does not change the repository licence.
 
