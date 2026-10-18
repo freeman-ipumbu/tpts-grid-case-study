@@ -2,7 +2,7 @@
 
 Desert Signal is the public design direction for TPTS Grid: a map-native digital product with the confidence of financial infrastructure and the sensory character of Namibia. Each section has one deliberate role: the opening creates desire, the Navigator creates orientation, the Atlas Lens creates trust and onboarding collects evidence.
 
-This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the 18 October 2026 discovery-pilot release.
+This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the production Route OS release verified on 18 October 2026.
 
 ## Brand idea
 
@@ -88,9 +88,14 @@ The base map is context; the TPTS overlay is meaning.
 
 - the **Grid Navigator** is the sole always-available traveller map and preserves geographic context across **Discover**, **Build** and **Stays**;
 - Discover prioritises destination context, Build prioritises the traveller's ordered line and Stays prioritises factual property points and their synchronized records;
+- the live Route OS lives *inside Build* and reuses that map for **Route Truth**, **Daylight Corridor**, **Weather Along Route**, **Route Essentials** and **Living Namibia**; the lenses are views of one route, not five map instances;
+- the five-lens dock uses a compact icon, short label, full accessible name and one expanded evidence panel; the selected lens changes overlay emphasis while route order and camera context remain stable;
+- Climate Memory and other source-backed summaries sit in a companion signal deck instead of becoming extra maps or pretending that every dataset has precise drawable geometry;
 - **Field**, **Atlas** and **Signal** are visual appearances over the same attributed map and product data; a style switch never changes a place's state;
 - destination anchors, unclaimed property points and a future bookable state remain visually and textually distinct;
 - a planned route uses a strong continuous signal; it is labelled as direct-line journey order until a successful provider response supplies road-following geometry, and even then remains planning guidance rather than navigation;
+- lens colour remains secondary to plain-language state: connected, partial, unavailable, credential required, no match and gated are always readable without colour;
+- source, evidence date or period, provider state and limitation stay next to material intelligence rather than disappearing into a global legal page;
 - attribution remains visible;
 - selected markers provide a corresponding text label and detail surface;
 - zoom controls are keyboard operable;
@@ -119,7 +124,14 @@ Within Build:
 - local saving and sharing are described separately;
 - direct-line kilometres carry an asterisk and plain-language warning;
 - road kilometres and drive time appear only for a successful routing-provider response, while live point weather names its public source;
+- the Route OS lens dock never blocks ordinary route editing and collapses cleanly on small screens;
+- Daylight Corridor exposes the dated shared solar window, Weather exposes time-stamped stop context, and Living Namibia describes bounded EONET awareness plus aggregate count-only GBIF context without suggesting comprehensive hazards or wildlife prediction;
+- Route Essentials shows a deliberate empty state until a versioned, attributed Namibia extract is approved—empty visual space is preferable to fabricated or stale pins;
+- Climate Memory explicitly says “climatology · not a forecast” and retains its month, sampling boundary and source;
+- the live Offline Route Pack action describes a static last-known export, includes generation time and limitations, and never uses the language of live offline navigation;
 - inventory, price and road-condition authority never appear in the planning surface.
+
+The five intelligence lenses and the three Navigator task lenses have different hierarchy. Discover / Build / Stays answer “what am I doing?”; Route / Light / Sky / Stops / Living answer “which evidence am I inspecting inside my route?” This distinction keeps the information architecture legible and prevents another row of equal-looking global navigation.
 
 ## Imagery
 

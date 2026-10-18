@@ -11,6 +11,12 @@ Last reviewed: **18 October 2026**
 | Grid Navigator | Current product source and release walkthrough | One shared traveller map with Discover, Build and Stays task lenses; lens changes preserve one geographic workspace while changing the active overlay and controls. |
 | Build lens | Current product source and release walkthrough; [earlier Route Studio capture](../assets/tpts-grid-route-studio-live-2026-10-16.jpg) retained as release history | Empty-start route editor with search, add, remove, reorder, trip name/nights, local save, deliberate share and non-navigation disclaimers. The linked image predates the unified Navigator information architecture. |
 | TPTS Road Intelligence | Current production endpoint, desktop walkthrough and 390 px responsive walkthrough | Live MET Norway forecasts at selected destination anchors; direct-line fallback visibly withholds road kilometres and drive time; successful provider geometry is accepted only through the bounded server adapter. |
+| Route OS | Production deployment from reviewed private revision `ab69a6b`; desktop, phone and maximum-route walkthroughs on 18 October 2026 | One Build map exposes Route Truth, Daylight Corridor, Weather Along Route, Route Essentials and Living Namibia as five switchable lenses without creating competing maps. |
+| Daylight Corridor | Production schema-v2 maximum-route response | MET Norway Sunrise 3.0 returned dated solar context for 12/12 selected stops and a shared window; route-duration comparison remained unavailable because road routing was not connected. |
+| Climate Memory | Production schema-v2 maximum-route response | NASA POWER returned monthly climatology for 4/12 evenly sampled stops and remained labelled as regional historical context, not current weather. |
+| Natural-event and biodiversity context | Two production maximum-route responses plus deep schema validation | EONET returned a valid connected empty state; GBIF returned connected aggregate count-only context. No GBIF occurrence records, taxa names, coordinates or media were exposed. |
+| Route Essentials | Production map and empty-state walkthrough | The fifth lens is live, but no unverified objects are drawn while the governed, versioned Namibia extract remains gated. |
+| Offline Route Pack | Production export-path walkthrough | The generated static file contains the chosen route, latest available context, sources, generation time and limitations. It is not an offline basemap, navigation service or self-updating alert channel. |
 | Map appearances | Current production map configuration | Field, Atlas and Signal select three OpenFreeMap styles without changing product state or data. |
 | Cinematic opening | Current product source and responsive walkthrough | Location-accurate Namibia imagery, route-signal motion and search/composer actions hand off into the relevant Navigator lens; no competing hero map is mounted. |
 | Public property index | Current factual directory module evaluated on 16 October 2026 | 28 records; 27 non-null exact OSM points; every record is unclaimed, has no inventory and is not represented as a TPTS partner. |
@@ -18,11 +24,30 @@ Last reviewed: **18 October 2026**
 | Claim and correction | Current directory cards and factual record pages | Every record has a claim path and an account-free correction/removal path. Claiming still requires authority verification. |
 | Owner onboarding | Current three-step form, validation contract and intake state machine | Public point and operating facts can enter a private `verification_required` queue; its precision map opens only on explicit request and submission does not publish or create inventory. |
 | Owner authentication and account access | Current customer-surface review and identity boundary | Gated pending TPTS-owned identity; no authenticated owner workspace is claimed live on the canonical Cloudflare customer surface. |
-| Integration launchpad | Current 20-record public readiness catalogue | One owned path, three ready public-data paths, five apply paths, eight evaluate paths and three restricted paths; no credential, approval or live-inventory claim. |
-| Payment boundary | Current readiness UI and server-side payment boundary | Partner diagnostics are read-only; live payment creation and automatic paid-state confirmation are disabled. |
+| Integration launchpad | Deployed 29-record readiness catalogue and production provider checks | One owned path, six live paths, three ready paths, six apply paths, ten evaluate paths and three restricted paths; no ready/apply/evaluate record is represented as a credential, approval or live-inventory claim. |
+| Payment boundary | Production readiness surface and server-side configuration check | Payment mode is disabled; partner diagnostics are configured and read-only; distinct merchant credentials are absent; live payment creation and automatic paid-state confirmation are disabled. |
 | Dependency audit | Current lockfile, pnpm 11.25.0, `pnpm audit --prod --json` and `pnpm audit --json` | Production scope reported 0 advisories. Full graph reported 34 development-path advisories: 15 high, 13 moderate, 6 low and 0 critical. |
 
 The retained screenshot is evidence of the earlier rendered Route Studio surface only. It predates the unified Grid Navigator and does not prove current information architecture, inventory, OTA access, merchant activation, payment success or accessibility conformance.
+
+## Production verification observations
+
+The following observations were captured against [tpts-grid.pages.dev](https://tpts-grid.pages.dev) on 18 October 2026:
+
+| Check | Observed result | Interpretation limit |
+| --- | --- | --- |
+| Public surfaces | Root, owner, integrations and payment-readiness surfaces each returned HTTP 200 | Availability of a shell does not activate owner authentication, inventory, payment creation or a marketplace |
+| Map worker | Same-origin MapLibre worker returned HTTP 200 as `application/javascript`, 508,314 bytes | Transfer success does not prove every tile source or future device will remain available |
+| Browser QA | Production walkthrough at 696 px produced no console errors or horizontal overflow; separate 390 px and 320 px responsive layout checks produced no horizontal overflow | Release checks, not formal accessibility certification or exhaustive device coverage |
+| Maximum-route cold request | 12 stops returned HTTP 200 with cache `MISS` in 6.10 seconds | One point-in-time observation, not a latency guarantee |
+| Maximum-route warm request | Identical repeat returned cache `HIT` in 0.21 seconds | Confirms that tested cache path, not a universal response-time commitment |
+| Deep response validation | Schema v2 valid; 11 direct-line legs; weather 12/12; daylight 12/12; climate 4/12 sampled; EONET connected empty; GBIF connected count-only | Provider completeness and road safety are not implied; empty EONET means only no matching open result |
+| Independent cold request | A second 12-stop request returned HTTP 200 in 3.91 seconds | Separate smoke observation, not an SLA |
+| Runtime tail | Cloudflare reported `outcome: ok` with 32 ms CPU time for the observed request | Isolate CPU measurement is not end-to-end network latency or a capacity promise |
+| Routing boundary | `credential-required`; direct-line truth retained, with road kilometres and drive time withheld | openrouteservice remains Ready, not Live |
+| Payment boundary | Mode disabled; partner diagnostics configured; distinct merchant credentials absent | No checkout, charge, merchant processing or automatic paid-state confirmation is live |
+
+The 12-stop checks exercise the maximum accepted route size. They verify response shape, fallback truth and independently settled provider sections; they do not turn public context into emergency, access, navigation or wildlife authority.
 
 ## External programme and data sources
 
@@ -46,10 +71,17 @@ The retained screenshot is evidence of the earlier rendered Route Studio surface
 | OpenStreetMap data | [Copyright and licence](https://www.openstreetmap.org/copyright) and [OSMF legal FAQ](https://osmfoundation.org/wiki/Licence_and_Legal_FAQ) | Map facts require attribution and ODbL-aware handling; an OSM point does not imply a commercial relationship. |
 | OpenFreeMap | [openfreemap.org](https://openfreemap.org/) | Public style service used by Field, Atlas and Signal map modes. |
 | MET Norway Locationforecast | [Terms of service](https://api.met.no/doc/TermsOfService) and [Locationforecast guide](https://api.met.no/doc/locationforecast/HowTO) | Public global point forecasts require an identifying user agent, responsible caching and attribution; forecasts are context, not safety advice. |
-| openrouteservice | [Developer portal](https://openrouteservice.org/dev/) and [service restrictions](https://openrouteservice.org/restrictions/) | A free Standard key can provide road geometry, distance and estimated duration within published limits; the public programme does not imply that TPTS has installed a production key. |
+| MET Norway Sunrise 3.0 | [API documentation](https://api.met.no/weatherapi/sunrise/3.0/documentation) | The public service provides dated solar and lunar events for coordinates; calculated daylight does not establish visibility, road condition or personal safety. |
+| openrouteservice | [Developer portal](https://openrouteservice.org/dev/) and [service restrictions](https://openrouteservice.org/restrictions/) | A Standard key can provide road geometry, distance and estimated duration within published limits; the TPTS server adapter exists, but the encrypted production key and routed public smoke test are still pending. |
+| NASA POWER | [API documentation](https://power.larc.nasa.gov/docs/services/api/) | Historical and climatological parameters are useful for regional season context when period and spatial resolution remain visible; they are not a local current forecast. |
+| GBIF | [API reference](https://techdocs.gbif.org/en/openapi/) | The live public layer exposes only an aggregate five-year count for a bounded route envelope. Occurrence records may be incomplete, historical or spatially sensitive, so records, taxa, coordinates and media are not returned to the browser and no sighting is predicted. |
+| OSM Route Essentials | [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API) and [OSM copyright](https://www.openstreetmap.org/copyright) | Mapped service points require attribution and incomplete-data warnings; TPTS intends versioned hosted extracts rather than a public Overpass instance in each traveller request. |
+| Wikidata and Wikimedia Commons | [API usage guidelines](https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_API_Usage_Guidelines) | Destination facts and media require revision-aware provenance plus per-item author and licence handling. |
+| NASA EONET | [API v3 documentation](https://eonet.gsfc.nasa.gov/docs/v3) | Open natural-event metadata can provide dated regional awareness; it is not an official emergency, closure, evacuation or navigation service. |
 | Frankfurter | [frankfurter.dev](https://frankfurter.dev/) | No-key reference exchange-rate data is available; any future display conversion must remain indicative and separate from a canonical NAD price. |
 | Cloudflare Turnstile | [Product documentation](https://developers.cloudflare.com/turnstile/) | A free challenge path exists, but server-side Siteverify and issued widget credentials are required before activation. |
 | NASA FIRMS | [Area API](https://firms.modaps.eosdis.nasa.gov/api/area/) | Active-fire observations are an evaluation path for separately labelled awareness context, not a current routing or safety feature. |
+| MapLibre offline regions | [Native offline guide](https://maplibre.org/maplibre-native-ffi/guides/work-offline/) | Managed offline regions are a native capability, not proof that the browser export stores licensed map tiles; native versus bounded PWA architecture and deletion rules remain evaluation work. |
 | TPTS privacy and contact | [Privacy policy](https://www.tptsnam.com/privacy-policy/) and [contact](https://www.tptsnam.com/contact/) | Operative privacy information and the public channel for product, property and correction enquiries. |
 
 ## Interpretation rules
@@ -59,7 +91,11 @@ The retained screenshot is evidence of the earlier rendered Route Studio surface
 - **Bookable** requires separately activated inventory, policies, commercial authority and a working payment/reconciliation path.
 - **Owner authentication gated** means the public claim and submission paths exist without live owner account access; an authenticated workspace requires a future TPTS-owned identity boundary.
 - **Path verified** means an official application or documentation path exists; it does **not** mean TPTS has been approved.
-- **Ready with attribution** applies only to public factual/geographic data, not rates or availability.
+- **Live** means deployed provider-backed behaviour and its fallback were production-verified; it does not mean complete coverage, commercial partnership or safety authority.
+- **Ready** means a documented technical path exists but activation or governance evidence is incomplete; it is not production access.
 - **Activation gated** means an architectural boundary exists but production use still depends on legal, commercial, security, provider and operational requirements.
+- **Production verified** records a dated release observation. It is not an uptime, latency, accessibility or provider-coverage guarantee.
+- **Freshness available** means the relevant observation, forecast, evidence period, lookback or generation time is exposed; it does not make the source complete or authoritative for safety.
+- **No matching result** means only that the bounded query returned none. It must not be translated into “no event,” “no species” or “no essential service exists.”
 - Dependency audits are registry snapshots, not security guarantees. Re-run both production-only and full-graph audits after every lockfile change.
 - Provider pages and programme terms can change. Re-check this register before making a new public status claim.

@@ -13,13 +13,19 @@ This is the public product case study. The production source, credentials, comme
 
 The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-grid.pages.dev), hosted on Cloudflare Pages.
 
+The **TPTS Route OS** production release was deployed and externally verified on 18 October 2026. It keeps one map and adds five switchable intelligence lenses, a source-backed signal deck and a bounded offline export. `Live` still has a narrow meaning: deployed provider-backed behaviour with a tested fallback—not market availability, safety authority or commercial approval.
+
 ## Current product snapshot
 
-The 18 October 2026 release is organised around **one shared traveller map**, supported by two deliberately different evidence and host tools:
+The 18 October 2026 product is organised around **one shared traveller map**, supported by two deliberately different evidence and host tools:
 
 - **The Grid Navigator** keeps discovery, route composition and factual stay inspection in one geographic workspace. Its three task lenses—**Discover**, **Build** and **Stays**—change the controls and overlay, not the traveller's place in Namibia.
 - **Discover** searches 21 real Namibian destination anchors. **Build** lets a traveller add up to 12 stops, remove or reorder them, name the trip, set its length, keep it in local browser storage and share it deliberately. **Stays** filters and selects factual property points without inventing price, availability or partner status.
 - **TPTS Road Intelligence** adds live MET Norway point forecasts to the traveller's chosen stops. A bounded server adapter can replace direct-line context with openrouteservice road geometry, distance and estimated drive time only when the optional server key is installed; without it, road kilometres and drive time are visibly withheld.
+- **TPTS Route OS** nests five focused views inside Build—**Route Truth**, **Daylight Corridor**, **Weather Along Route**, **Route Essentials** and **Living Namibia**. These are lenses over the same MapLibre instance, not five maps and not five competing journeys.
+- Live intelligence includes a MET Norway Sunrise shared-solar window, NASA POWER climate memory, bounded NASA EONET event awareness and an aggregate, count-only GBIF biodiversity signal. No GBIF record, species name, coordinate, media item or sensitive-location detail is exposed by this layer. Every section exposes its provider state, timestamp or evidence period, attribution, limitation and empty/degraded state.
+- **Route Essentials** deliberately draws no unverified objects while a versioned, TPTS-hosted OpenStreetMap extract is still gated. The browser does not put a public Overpass instance in the traveller request path.
+- A bounded **Offline Route Pack** exports the chosen stops, latest available route truth, weather, daylight, source names, timestamps and limitations as a static traveller-controlled file. It is not an offline basemap, live navigation, a booking document store or a self-updating alert service.
 - **The Atlas Lens** replaces a second directory map with a quieter regional evidence view: **28 factual public property records**, **27 exact, individually attributed OpenStreetMap points** and the distribution of those records across the represented regions.
 - **The owner precision map** is not another exploration surface. It stays closed until an operator explicitly opens it to place or review one public-facing point, with manual coordinates retained as a fallback.
 - **Field, Atlas and Signal** remain visual map appearances over the same attributed OpenFreeMap/OpenStreetMap context. A style change never alters route order, record state, inventory or trust.
@@ -33,12 +39,14 @@ The [previous standalone Route Studio capture](assets/tpts-grid-route-studio-liv
 | Surface | Current posture | What is deliberately not claimed |
 | --- | --- | --- |
 | Grid Navigator | One traveller map with Discover, Build and Stays task lenses; live stop weather; provider-routed road geometry when connected | Turn-by-turn navigation, proof of road access or safety, availability or a reservation |
+| Route OS | Live five-lens Build map plus daylight, climate, event and aggregate biodiversity context; providers degrade independently | Comprehensive coverage, emergency authority, wildlife predictions or a road-safety verdict |
+| Offline Route Pack | Live static export of the traveller's route and the latest available, dated planning context | Offline tiles, continuous updates, navigation, emergency coverage or proof that a booking exists |
 | Map appearance | Field, Atlas and Signal styles; accessible status and text fallbacks | That a style, marker or map point is a partner or a bookable room |
 | Atlas Lens and property directory | Regional evidence view plus 28 independently checked factual records; 27 exact OSM points | A duplicate exploration map; copied OTA descriptions, photos, ratings, reviews, prices or availability |
 | Property records | Official link, locality, source provenance, claim and correction paths | Operator control until authority has been verified |
 | Owner onboarding | A three-step private submission and verification queue | Automatic publication, verification or bookability |
 | Owner account access | Gated pending a TPTS-owned identity boundary | That owner authentication, an account workspace, operator controls, publication or inventory activation are live |
-| Integration launchpad | 20 public programme paths classified by readiness | Credentials, approval, signed agreements or live production access |
+| Integration launchpad | Live 29-path readiness catalogue; 6 public-data paths meet the product's Live evidence rule | Credentials, approval, agreements, inventory or commercial access for any non-live path |
 | Payments | A guarded server-side architecture and readiness boundary | Live payment creation or automatic paid-state confirmation |
 
 ## From discoverable to claimed to bookable
@@ -53,7 +61,7 @@ Grid exposes a simple public promise while keeping the operational gates explici
 
 Owners can start a claim from a property card or factual record page. Every record also offers a direct **correct / remove** route that does not require an account. A correction, ownership claim or removal request is a governance action, not a commercial conversion.
 
-## The Grid Navigator: one map, three lenses
+## The Grid Navigator and Route OS
 
 The Grid Navigator gives the map one clear job at a time without forcing the traveller to restart or jump between competing geographic surfaces.
 
@@ -75,6 +83,20 @@ Within Build, travellers can:
 
 The Road Intelligence deck makes provider failure visible instead of letting it collapse the itinerary. Weather, route editing and the base map degrade independently. Even a routed result remains planning guidance—not turn-by-turn navigation, proof of access or a road-safety statement.
 
+Inside Build, Route OS gives that same map five subordinate intelligence lenses:
+
+| Lens | Live behaviour | Truth boundary |
+| --- | --- | --- |
+| **Route Truth** | Shows traveller-chosen order, direct-line context and—only after a successful provider response—road-following geometry and estimates | The openrouteservice key is still pending; road kilometres and drive time remain withheld until production verification succeeds |
+| **Daylight Corridor** | Uses MET Norway Sunrise 3.0 to show sunrise, sunset and the solar-window overlap across chosen stops | Astronomical context is not visibility, road condition, personal safety or a departure recommendation |
+| **Weather Along Route** | Places the existing, time-stamped MET Norway point forecasts on the chosen line | A point forecast changes and is not corridor-wide road or access evidence |
+| **Route Essentials** | Provides a governed home for fuel, water, clinics, repair and similar mapped services | It remains intentionally empty until a versioned Namibia extract, ODbL review and freshness display are ready |
+| **Living Namibia** | Summarises dated EONET event awareness and a five-year aggregate GBIF occurrence count without exposing records, taxa, coordinates or media | EONET is not an emergency or closure feed; the GBIF count is not a sighting forecast |
+
+The companion signal deck adds **Climate Memory** from NASA POWER. It samples a bounded set of route stops and labels historical monthly climatology as regional evidence, never as today's weather. Each intelligence section can fail or return no match without disabling route editing, the base map or the other sections.
+
+The live Offline Route Pack is a portable snapshot of the route and whatever verified context was available at export time. Its own copy says that it does not update itself. A future native offline-map capability remains a separate evaluated programme with licensing, expiry, storage and deletion gates.
+
 The cinematic opening composer can suggest a route from a brief such as coast, desert or wildlife, then hands that suggestion into Build. The hero uses real Namibia imagery and an animated route thread instead of running a competing live map behind the primary task. Suggestions remain editable and carry no inventory, price, road-safety or availability authority.
 
 The Atlas Lens is intentionally not a fourth Navigator mode. It is a factual regional ledger that shows record concentration and gaps, then hands a selected set back to Stays when geography is useful.
@@ -95,17 +117,18 @@ Owner authentication and the account workspace are not live on the canonical cus
 
 ## Safe integration launchpad
 
-Grid exposes an integration research surface, not an integration trophy case. The launchpad was reviewed on **18 October 2026** and classifies 20 paths without asserting credentials or production access.
+Grid exposes an integration research surface, not an integration trophy case. The production launchpad was reviewed on **18 October 2026** and classifies 29 paths without asserting credentials or commercial access beyond the six provider-backed public-data paths that passed production verification.
 
 | Stage | Paths | Meaning |
 | --- | --- | --- |
 | **Owned** | TPTS Direct | The canonical discovery, claim and future native-inventory direction belongs to TPTS. |
-| **Ready with attribution / terms** | OpenStreetMap + Wikidata, MET Norway Weather, Frankfurter FX | Public geography, point weather and reference exchange data under their respective terms; never availability or partner status. |
-| **Apply** | Booking.com Demand, Expedia Rapid, Hostelworld, ResRequest ResConnect, NightsBridge | A public application, affiliate, NDA/audit or commercial relationship path exists. TPTS approval is not claimed. |
-| **Evaluate** | openrouteservice, Cloudflare Turnstile, NASA FIRMS, Hotelbeds / HBX, Google Hotel Center, Travelgate Hotel-X, Channex, Wetu | Technically relevant or key-gated paths whose activation depends on configuration, governance, agreements, certification or a mature native inventory model. |
+| **Live** | OpenStreetMap foundation, MET Norway Weather, MET Norway Sunrise 3.0, NASA POWER, GBIF, NASA EONET | Provider-backed context is deployed with attribution, explicit limits and independently degradable fallbacks. |
+| **Ready** | openrouteservice, OSM Route Essentials, Wikidata + Wikimedia Commons | A documented technical path exists, but the activation or governance evidence is still incomplete. |
+| **Apply** | WhatsApp Cloud API, Booking.com Demand, Expedia Rapid, Hostelworld, ResRequest ResConnect, NightsBridge | A business setup, application, affiliate, NDA/audit or commercial relationship is required. TPTS approval is not claimed. |
+| **Evaluate** | NASA FIRMS, Workers AI + Vectorize, Offline Grid Pack, Frankfurter FX, Cloudflare Turnstile, Hotelbeds / HBX, Google Hotel Center, Travelgate Hotel-X, Channex, Wetu | Technical access may exist, but safety, privacy, licensing, commercial or inventory-maturity gates remain. |
 | **Restricted** | Booking.com Connectivity, Amadeus Hotels, Airbnb | Intake or access constraints make these unsuitable as launch dependencies. |
 
-The UI links each card to an official programme page and states the next legitimate action. It does not scrape inventory, invent partner status or place an external channel inside the canonical TPTS record. See the dated [public verification register](docs/verification-register.md).
+The interface links each card to an official programme page and states the next legitimate action. It does not scrape inventory, invent partner status or place an external channel inside the canonical TPTS record. See the dated [public verification register](docs/verification-register.md).
 
 ## Payment is a hard boundary
 
@@ -153,6 +176,9 @@ flowchart LR
     N --> E[Discover]
     N --> R[Build]
     N --> S[Stays]
+    R --> OS[Route OS / five map lenses]
+    OS -. source + freshness .-> I[Daylight / weather / climate / events / biodiversity]
+    OS -. static snapshot .-> OP[Offline Route Pack]
     T --> D[Atlas Lens + factual directory]
     O[Property operator] --> C[Claim or new private draft]
     C --> V[Authority verification]
@@ -166,7 +192,7 @@ flowchart LR
     classDef live fill:#061b1c,stroke:#42d5bd,color:#fffdf7;
     classDef truth fill:#f5efe2,stroke:#ce6842,color:#061b1c;
     classDef gated fill:#fffdf7,stroke:#0d6872,color:#061b1c,stroke-dasharray:5 4;
-    class N,E,R,S,D,U,C,V live;
+    class N,E,R,S,D,U,C,V,OS,I,OP live;
     class T,O,K truth;
     class B,P,X gated;
 ```
@@ -190,6 +216,13 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 | Map appearance | Field, Atlas and Signal modes live |
 | Build lens | Live; editable, local-first planning aid |
 | TPTS Road Intelligence | Live; MET Norway stop forecasts and truthful direct-line fallback; road routing activates only with the optional server key |
+| Five-lens Route OS | Live; one Build map with Route Truth, Daylight, Weather, Essentials and Living lenses |
+| MET Sunrise Daylight Corridor | Live; 12/12 stops returned dated solar context in the production maximum-route test |
+| NASA POWER Climate Memory | Live; 4/12 evenly sampled stops returned regional monthly climatology in the production maximum-route test |
+| EONET and GBIF context | Live; EONET returned a valid connected empty state and GBIF returned aggregate count-only context in production |
+| Route Essentials | Lens shell present; governed Namibia extract remains gated and no unverified objects are drawn |
+| Offline Route Pack | Live static export with generation time, available source context and planning limits; not an offline map or self-updating service |
+| openrouteservice road routing | Adapter ready; encrypted production key and routed production smoke test still pending |
 | Stays lens and factual property directory | Live; 28 records, 27 exact attributed OSM points |
 | Atlas Lens | Live; factual regional distribution view, not a second traveller map |
 | Owner precision map | Live on demand inside onboarding; one public-facing point only |
@@ -198,9 +231,26 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 | Owner authentication and account workspace | Gated; pending TPTS-owned identity and not live on the customer production surface |
 | Claimed owner-managed public records | Gated by verification; not represented as current inventory |
 | Commercial inventory and OTA availability | Not live |
-| Integration launchpad | Live as programme research and readiness guidance only |
+| Integration launchpad | Live 29-path readiness guide: 1 owned, 6 live, 3 ready, 6 apply, 10 evaluate and 3 restricted |
 | OneGate / CallPay partner diagnostic | Verified only for its permitted read-only scope |
 | Live payment creation and paid-state confirmation | Disabled |
+
+## Production verification · 18 October 2026
+
+The Route OS deployment from reviewed private revision `ab69a6b` passed the following point-in-time release checks:
+
+- root, owner, integrations and payment-readiness surfaces returned HTTP 200;
+- the same-origin MapLibre worker returned HTTP 200 as `application/javascript` at 508,314 bytes;
+- the production browser walkthrough at 696 px completed with no console errors or horizontal overflow, while separate 390 px and 320 px responsive layout checks found no horizontal overflow;
+- a cold maximum-route request covering 12 chosen stops returned HTTP 200 with a cache `MISS` in 6.10 seconds; the repeat returned a `HIT` in 0.21 seconds;
+- the validated schema-v2 response contained 11 direct-line legs, weather for 12/12 stops, daylight for 12/12 stops and NASA POWER climate memory for 4/12 evenly sampled stops;
+- EONET returned a connected empty result, which means no matching open event was returned—not that no event existed;
+- GBIF returned a connected aggregate count-only result; no occurrence records, taxa names, coordinates or media were exposed;
+- a separate cold 12-stop request returned HTTP 200 in 3.91 seconds, while the Cloudflare tail recorded `outcome: ok` and 32 ms CPU time;
+- openrouteservice remained `credential-required`, so the response stayed in truthful direct-line mode with road kilometres and drive time withheld;
+- OneGate payment mode remained disabled; partner diagnostics were configured, while distinct merchant credentials were absent.
+
+These are release observations, not latency guarantees or an uptime service level. A 200 owner or payment-readiness shell does not activate owner authentication, inventory, checkout or paid-state confirmation.
 
 ## Links
 
