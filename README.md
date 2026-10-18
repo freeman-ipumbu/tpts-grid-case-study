@@ -13,12 +13,15 @@ This is the public product case study. The production source, credentials, comme
 
 The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-grid.pages.dev), hosted on Cloudflare Pages.
 
+The **Namibian Meridian** visual release turns that product into a journey through the country rather than a stack of interchangeable software panels. A real road to Spitzkoppe opens the experience; Dune 45, the Skeleton Coast, Etosha and the Okavango move through a four-part editorial sequence; Spitzkoppe closes the story. Each photograph is location-specific, source-linked and used only as destination atmosphere—not as evidence that a property is listed, partnered or bookable.
+
 The **TPTS Route OS** production release was deployed and externally verified on 18 October 2026. It keeps one map and adds five switchable intelligence lenses, a source-backed signal deck and a bounded offline export. `Live` still has a narrow meaning: deployed provider-backed behaviour with a tested fallback—not market availability, safety authority or commercial approval.
 
 ## Current product snapshot
 
-The 18 October 2026 product is organised around **one shared traveller map**, supported by two deliberately different evidence and host tools:
+The 18 October 2026 product is organised around **one shared traveller map**, a cinematic Namibia narrative and two deliberately different evidence and host tools:
 
+- **Namibian Meridian** gives the interface a place-specific cinematic spine: six real Namibia photographs, a four-movement landscape sequence, geography-led section atmospheres, an editorial serif voice and a restrained route line that carries the eye through the page. Responsive WebP derivatives, visible credits and reduced-motion behaviour keep the treatment deliberate rather than decorative.
 - **The Grid Navigator** keeps discovery, route composition and factual stay inspection in one geographic workspace. Its three task lenses—**Discover**, **Build** and **Stays**—change the controls and overlay, not the traveller's place in Namibia.
 - **Discover** searches 21 real Namibian destination anchors. **Build** lets a traveller add up to 12 stops, remove or reorder them, name the trip, set its length, keep it in local browser storage and share it deliberately. **Stays** filters and selects factual property points without inventing price, availability or partner status.
 - **TPTS Road Intelligence** adds live MET Norway point forecasts and production-connected openrouteservice road geometry, distance and estimated drive time to the traveller's chosen stops. The bounded server adapter preserves a direct-line fallback and visibly withholds road kilometres and drive time whenever routing is unavailable.
@@ -38,6 +41,7 @@ The [previous standalone Route Studio capture](assets/tpts-grid-route-studio-liv
 
 | Surface | Current posture | What is deliberately not claimed |
 | --- | --- | --- |
+| Namibian Meridian story | Six source-linked, location-specific Namibia photographs; four regional movements; responsive derivatives; in-product credit register | That destination atmosphere depicts a listed property, room, partner, review, price or live inventory |
 | Grid Navigator | One traveller map with Discover, Build and Stays task lenses; live stop weather; provider-routed road geometry when connected | Turn-by-turn navigation, proof of road access or safety, availability or a reservation |
 | Route OS | Live five-lens Build map plus daylight, climate, event and aggregate biodiversity context; providers degrade independently | Comprehensive coverage, emergency authority, wildlife predictions or a road-safety verdict |
 | Offline Route Pack | Live static export of the traveller's route and the latest available, dated planning context | Offline tiles, continuous updates, navigation, emergency coverage or proof that a booking exists |
@@ -199,9 +203,27 @@ flowchart LR
 
 Read the [public architecture notes](docs/architecture.md) for the data boundaries and transition rules that can safely be disclosed.
 
-## Brand: Desert Signal
+## Namibian Meridian visual release
 
-The visual system combines Atlantic depth, dune warmth and precise route language. The Convergence Mark represents paths meeting in one navigable system. A cinematic Namibia opening establishes place; the Grid Navigator handles geography; the Atlas Lens handles evidence; and the owner precision tool handles one coordinate. Map appearances change atmosphere without changing truth, and motion yields to reduced-motion preferences.
+The visual overhaul follows Namibia's geography instead of repeating one branded background from top to bottom. It is a single continuous journey with distinct chapters:
+
+1. **The road opens.** A real Spitzkoppe approach sits behind the route composer, so planning starts with Namibia rather than a decorative dashboard.
+2. **The map becomes an instrument.** The Grid Navigator receives the darkest, most focused chapter: a wider map, quieter supporting panel, precise corner marks and a restrained route signal. It remains the only persistent traveller map.
+3. **The country moves in four directions.** Dune 45, the Skeleton Coast, Etosha and the Okavango form an asymmetric editorial mosaic labelled with location, coordinates, creator and source.
+4. **Product sections change climate.** Warm terrain, Atlantic mineral tones, dark payment infrastructure, ochre host onboarding and night-blue network readiness distinguish purpose without breaking the system.
+5. **The story returns to place.** A wide Spitzkoppe photograph closes the experience beside the line “Built here. Ready for everywhere.”
+
+This is cinematic presentation with product restraint. The map remains interactive; itinerary controls remain text-first and editable; credits remain visible; mobile layouts turn the mosaic into an intentional vertical sequence; hover effects are gated to hover-capable devices; decorative motion has a reduced-motion path.
+
+The imagery system deliberately separates **destination atmosphere** from **supply truth**. The six photographs are not property cards and are never used to imply a relationship, room type, rating, price or availability. Current directory records remain factual, unclaimed and non-bookable until their separate evidence gates are met.
+
+Read the [photography provenance and use boundaries](docs/image-provenance.md) and the [public design-system notes](docs/design-system.md).
+
+## Brand: Desert Signal → Namibian Meridian
+
+**Desert Signal** remains the underlying brand system: Atlantic depth, dune warmth and precise route language. **Namibian Meridian** is its new cinematic expression—a subtle north/south journey line, geography-led chapter palettes, editorial Newsreader moments and real destination photography. The Convergence Mark still represents paths meeting in one navigable system.
+
+The opening establishes desire; the Grid Navigator handles geography; the Atlas Lens handles evidence; and the owner precision tool handles one coordinate. Map appearances change atmosphere without changing truth, and motion yields to reduced-motion preferences.
 
 See the [public design-system notes](docs/design-system.md).
 
@@ -211,6 +233,8 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 
 | Capability | Status on 18 October 2026 |
 | --- | --- |
+| Namibian Meridian visual system | Implemented; real, source-linked Namibia photography, four-movement landscape story, editorial type layer, distinct geographic section atmospheres and responsive/reduced-motion treatments |
+| Image provenance | Published; six source records, creators, licences and use boundaries documented; no image is treated as property or inventory evidence |
 | Grid Navigator | Live; one traveller map with Discover, Build and Stays lenses |
 | Namibia destination anchors | Live; 21 public geographic anchors |
 | Map appearance | Field, Atlas and Signal modes live |
@@ -260,6 +284,7 @@ These are release observations, not latency guarantees or an uptime service leve
 - **TPTS privacy policy:** [tptsnam.com/privacy-policy](https://www.tptsnam.com/privacy-policy/)
 - **Product enquiries and correction requests:** [info@tptsnam.com](mailto:info@tptsnam.com)
 - **Experience portfolio:** [SolarSpin Technologies](https://solarspin-namibia.pages.dev/)
+- **Photography provenance:** [source, licence and use register](docs/image-provenance.md)
 
 ## About this repository
 

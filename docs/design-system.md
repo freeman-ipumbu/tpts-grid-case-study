@@ -1,6 +1,8 @@
-# Desert Signal design system
+# Desert Signal · Namibian Meridian design system
 
-Desert Signal is the public design direction for TPTS Grid: a map-native digital product with the confidence of financial infrastructure and the sensory character of Namibia. Each section has one deliberate role: the opening creates desire, the Navigator creates orientation, the Atlas Lens creates trust and onboarding collects evidence.
+Desert Signal is the public design system for TPTS Grid: a map-native product with the confidence of financial infrastructure and the sensory character of Namibia. **Namibian Meridian** is its cinematic expression—a visual journey that changes atmosphere with the country's geography while preserving one calm interaction system.
+
+Each section has one deliberate role: the opening creates desire, the Navigator creates orientation, the four landscape movements create memory, the factual directory creates trust and onboarding collects evidence.
 
 This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the production Route OS release verified on 18 October 2026.
 
@@ -9,6 +11,8 @@ This is a rationale and token reference, not a distributable copy of the product
 **Movement converges into possibility.**
 
 The mark is imagined as route lines meeting at signal nodes: road, place, payment and people becoming one coherent grid. It avoids literal animals, flags and predictable dune silhouettes. The result should feel Namibian through material, light, scale and rhythm—not decoration.
+
+The Meridian extends that idea through the full page. A fine north/south signal line and three quiet nodes connect the experience without behaving like a progress tracker or competing with the map. The line is an editorial device; it does not indicate route completion, live position or distance.
 
 ## Voice
 
@@ -42,6 +46,7 @@ Primary lines:
 | Signal 300 | `#78EAD4` | Hover and luminous accent |
 | Dune 700 | `#A94F32` | Earth-tone emphasis on light surfaces |
 | Dune 500 | `#CE6842` | Brand warmth and route accent |
+| Dune 400 | `#EF9B7B` | Warm focus detail on dark geographic surfaces |
 | Sun 400 | `#F1AE3F` | Sparse highlight or caution |
 | Salt 50 | `#FFFDF7` | Primary light surface |
 | Salt 100 | `#F5EFE2` | Warm secondary surface |
@@ -54,10 +59,11 @@ Colour is semantic, never the only carrier of state. Signal teal means action, f
 ## Typography
 
 - **Display:** [Geologica](https://github.com/googlefonts/geologica) — variable, compact and geological without becoming themed.
+- **Editorial:** [Newsreader](https://github.com/productiontype/Newsreader) — variable, optical serif used sparingly for emotional clauses, landscape chapters and the closing manifesto.
 - **Interface:** [IBM Plex Sans](https://github.com/IBM/plex) — highly legible controls and longer UI copy.
 - **Data:** IBM Plex Mono — coordinates, status labels, route metadata and compact system information.
 
-Large display type uses tight tracking and disciplined line breaks. The mono face is a functional layer, not an aesthetic applied to paragraphs.
+Geologica carries structure and confidence; Newsreader adds human warmth at moments where the story leaves pure interface language. The pair never alternates inside ordinary controls. Large type uses tight tracking and disciplined line breaks. The mono face is a functional layer, not an aesthetic applied to paragraphs.
 
 ## Shape and layout
 
@@ -66,6 +72,9 @@ Large display type uses tight tracking and disciplined line breaks. The mono fac
 - editorial asymmetry creates surprise without disturbing task flows;
 - thin lines and small data labels add precision;
 - the cinematic hero uses location-accurate Namibia imagery and a route signal, not a second live map;
+- the route workspace reads as one wide instrument—map first, evidence second—rather than two equal dashboard cards;
+- each major product chapter has its own geographic atmosphere instead of repeating one solid brand fill;
+- the four-image landscape sequence uses scale and asymmetry to communicate different environments, not a generic equal-card grid;
 - map, imagery and copy overlap only when contrast and pointer behaviour remain unambiguous;
 - controls meet a 44 px minimum target, with 48 px preferred for primary actions.
 
@@ -76,6 +85,8 @@ Motion should feel like a vehicle settling onto a road: quick, weighted and purp
 - entrance motion uses restrained vertical reveal;
 - selections have a short spring response;
 - the convergence mark can draw its routes and then resolve its nodes;
+- the Meridian nodes breathe slowly while the page is active, without communicating product state;
+- hover lift and image scale run only on devices that actually support hover;
 - scroll navigation announces spatial movement without hijacking scroll;
 - loading language may sequence “mapping / connecting / opening Namibia” while work is real;
 - every non-essential animation has a reduced-motion equivalent.
@@ -87,6 +98,7 @@ Do not use endless parallax, decorative cursor trails, forced scroll sequences o
 The base map is context; the TPTS overlay is meaning.
 
 - the **Grid Navigator** is the sole always-available traveller map and preserves geographic context across **Discover**, **Build** and **Stays**;
+- its visual frame uses measured corner marks, a dark geographic field and a wider map-to-panel ratio so the country—not a control column—holds the scene;
 - Discover prioritises destination context, Build prioritises the traveller's ordered line and Stays prioritises factual property points and their synchronized records;
 - the live Route OS lives *inside Build* and reuses that map for **Route Truth**, **Daylight Corridor**, **Weather Along Route**, **Route Essentials** and **Living Namibia**; the lenses are views of one route, not five map instances;
 - the five-lens dock uses a compact icon, short label, full accessible name and one expanded evidence panel; the selected lens changes overlay emphasis while route order and camera context remain stable;
@@ -135,9 +147,20 @@ The five intelligence lenses and the three Navigator task lenses have different 
 
 ## Imagery
 
-Imagery should reveal Namibia's scale, texture and transitions: Atlantic fog, salt, basalt, road, dune and human-made shelter. Prefer real, location-accurate photography with rights and provenance over generic safari imagery.
+Imagery reveals Namibia's scale, texture and transitions: Atlantic fog, salt, basalt, road, dune, river light and human-made shelter. The current visual release uses six real, location-specific photographs with creator, source and licence provenance:
 
-When generative imagery is used for concept presentation, label it, keep it free of false property claims and never present an invented accommodation as bookable inventory.
+- a road to Spitzkoppe for the opening;
+- Dune 45 at sunrise for the Namib movement;
+- a Skeleton Coast shipwreck and dune field for the Atlantic movement;
+- elephants at an Etosha water point for the Etosha movement;
+- an Okavango sunset in Bwabwata for the Kavango movement;
+- Spitzkoppe for the closing manifesto.
+
+Responsive WebP derivatives keep bandwidth and crop control inside the product. The treatment permits resizing, responsive cropping and restrained colour adjustment; it does not permit changing the represented place or creating an invented stay. Visible page-level credits provide the immediate source cue, while the footer and [photography provenance register](image-provenance.md) preserve the complete record.
+
+These photographs are **destination atmosphere only**. They never stand in for a property image, listing relationship, room, rate, review, availability or booking state. The factual directory continues to omit third-party property photography until a verified operator supplies content it is authorised to use.
+
+When generative imagery is used for a future concept presentation, it must be labelled, kept outside factual supply surfaces and never presented as bookable inventory. The current six-image Namibian Meridian sequence is photographed, not generated.
 
 ## Accessibility contract
 
@@ -159,6 +182,8 @@ Current implementation evidence includes a skip link, labelled map regions, keyb
 The phone layout is designed as a first-class task surface rather than a scaled desktop canvas:
 
 - the Navigator map and active lens panel stack, and long route lists stop using nested scroll regions;
+- the four landscape movements become a deliberate vertical sequence with readable credits and focal points instead of shrinking into an illegible desktop mosaic;
+- the hero photograph, copy and route composer preserve a clear reading order and useful controls at 320 px, 390 px and wider phone layouts;
 - property and integration grids become single-column;
 - the mobile dock keeps Explore, Trip, Places and Host within reach, respects safe-area insets and yields while the host precision map is open;
 - primary tap targets expand to at least 44 px, with several navigation actions at 46–52 px;
@@ -176,3 +201,5 @@ The experience footer should include:
 > A Digital Experience by [SolarSpin Technologies](https://solarspin-namibia.pages.dev/)
 
 Third-party map, type and channel marks remain subject to their own licences and brand rules. Their inclusion in documentation does not imply partnership or approval.
+
+Photography attribution and adaptation notes are maintained in the [Namibia photography provenance register](image-provenance.md). An image source does not imply that its creator or hosting platform endorses TPTS Grid.

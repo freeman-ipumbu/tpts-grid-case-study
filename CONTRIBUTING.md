@@ -30,6 +30,7 @@ This repository is a **public product showcase**, not the production application
 4. Preserve the distinction between a destination anchor and a property record, and between discoverable, claimed and bookable truth states.
 5. Treat every current public property record as unclaimed and non-bookable unless a later, dated product audit proves otherwise.
 6. Do not add third-party logos or copyrighted media without documented permission.
+7. For any destination image correction or proposed replacement, include the represented place, creator, canonical source, applicable licence and material edits; keep it separate from property and inventory evidence.
 
 By contributing, you confirm that you have the right to submit the material and permit TPTS Financial Technology Group to use it in this case study. Acceptance is at the maintainers' discretion and does not change the repository licence.
 

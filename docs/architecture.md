@@ -12,6 +12,7 @@ The core product must still help a traveller discover Namibia, shape a route and
 
 As of 18 October 2026, the public product contains:
 
+- the Namibian Meridian presentation layer: six source-linked Namibia photographs, responsive derivatives, a four-movement landscape story and geography-led section atmospheres that remain separate from property evidence;
 - 21 destination anchors for geographic route context;
 - one Grid Navigator with Discover, Build and Stays task lenses over a shared traveller map;
 - traveller-controlled route search, add, remove, reorder, duration, local save and deliberate sharing inside Build;
@@ -81,6 +82,8 @@ flowchart LR
 
 Owns navigation, map interaction, route composition, accessible fallbacks and transparent state labels. The Grid Navigator keeps three tasks in one traveller map: Discover reads destination context, Build composes an editable trip and Stays inspects factual property signals. A cinematic opening composer may suggest an itinerary, but every stop remains editable. Without a successful routing-provider response, its line is journey order and direct-line context; road kilometres and drive time are withheld. Story cards, directory actions and search controls enter the relevant lens instead of creating more map instances. The experience must not fabricate a rate, room, road condition or partnership.
 
+The Namibian Meridian layer is presentation, not supply data. It uses licensed destination photography to establish geography and emotion, then hands the traveller into the same functional map. Image captions and the footer preserve attribution; no photograph mutates a destination anchor or property record, and no visual treatment can make an unclaimed record look bookable.
+
 ### Geographic intelligence
 
 Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. The three Navigator lenses change the traveller's task; the five Route OS lenses inside Build change the intelligence overlay; Field, Atlas and Signal change appearance only. All three layers preserve one map, one ordered route and one selection state.
@@ -130,6 +133,7 @@ The launchpad records 29 owned, public-data, intelligence, messaging, demand, su
 | --- | --- | --- |
 | Public geography | Town names, destination coordinates, OSM property points, corridor labels | May be documented with source attribution and a correction path |
 | Public product content | Brand language, feature descriptions, non-sensitive status | May be documented accurately |
+| Licensed destination media | Source-linked Namibia photography and responsive derivatives | May establish atmosphere when creator, source, licence and adaptation record remain visible; never treated as property or inventory evidence |
 | Operational | Verification notes, internal moderation state, support history | Private |
 | Personal | Host contact details, traveller identity, location permission data | Private; collect minimally |
 | Commercial | Rates, availability, agreements, channel identifiers | Private and source-governed |
@@ -167,7 +171,7 @@ Each transition adds evidence. Discoverable does not mean claimed, and claimed d
 - **Browser success is not payment success.** Only trusted server-side confirmation can settle a booking state.
 - **Generated advice is not operational truth.** Separate suggestions from live availability, policy and road-safety data.
 - **Retry is expected.** Mutating operations require replay-safe design and observable outcomes.
-- **Remote bandwidth matters.** Prioritise first interaction, defer secondary map instances and keep media deliberate.
+- **Remote bandwidth matters.** Prioritise first interaction, avoid secondary traveller maps, serve responsive local media derivatives and keep imagery deliberate.
 
 ## Deployment posture
 
