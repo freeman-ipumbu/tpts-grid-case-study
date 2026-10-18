@@ -233,7 +233,7 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 
 | Capability | Status on 18 October 2026 |
 | --- | --- |
-| Namibian Meridian visual system | Implemented; real, source-linked Namibia photography, four-movement landscape story, editorial type layer, distinct geographic section atmospheres and responsive/reduced-motion treatments |
+| Namibian Meridian visual system | Live and production-verified; real, source-linked Namibia photography, four-movement landscape story, editorial type layer, distinct geographic section atmospheres and responsive/reduced-motion treatments |
 | Image provenance | Published; six source records, creators, licences and use boundaries documented; no image is treated as property or inventory evidence |
 | Grid Navigator | Live; one traveller map with Discover, Build and Stays lenses |
 | Namibia destination anchors | Live; 21 public geographic anchors |
@@ -260,6 +260,16 @@ Grid is a **live production discovery and onboarding pilot**, not a live accommo
 | Live payment creation and paid-state confirmation | Disabled |
 
 ## Production verification · 18 October 2026
+
+The Namibian Meridian release from reviewed private source revision `c88e598f91155cae0dcfb8d37783edfa964c7c12` is live at the [canonical production alias](https://tpts-grid.pages.dev) and the immutable deployment [9ba7fd61.tpts-grid.pages.dev](https://9ba7fd61.tpts-grid.pages.dev). Its final release gate recorded:
+
+- successful lint, all **5/5** route tests and a successful production build;
+- HTTP 200 for the root document, responsive WebP media and same-origin MapLibre worker, with security headers present and a one-year immutable cache policy on versioned assets;
+- clean browser QA at 1280 px, 390 × 844 and 320 × 800: no horizontal overflow, a live MapLibre canvas and zero console warnings or errors;
+- all **29 readiness cards** visible without representing application-stage or restricted programmes as live integrations;
+- a restored three-stop Windhoek–Sesriem–Swakopmund route that returned a point-in-time provider-routed **674 km** road graph and **15 h 28 min** estimate.
+
+These observations verify the deployed interface and tested route path. They do not activate booking, inventory, checkout, payment confirmation, partner approval or turn-by-turn navigation, and they are not an uptime, road-access or safety guarantee.
 
 The Route OS deployment from reviewed private runtime revision `c8000f6` passed the following point-in-time release checks. The openrouteservice activation sequence began on an earlier deployment-specific hostname; the final routed metrics below were rerun on the stable production hostname after cold-route hardening. The provider secret remained environment configuration.
 

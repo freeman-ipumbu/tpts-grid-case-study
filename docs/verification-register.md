@@ -38,6 +38,10 @@ The following observations were captured against [tpts-grid.pages.dev](https://t
 
 | Check | Observed result | Interpretation limit |
 | --- | --- | --- |
+| Namibian Meridian deployment | Reviewed private source revision `c88e598f91155cae0dcfb8d37783edfa964c7c12` was deployed to immutable hostname [9ba7fd61.tpts-grid.pages.dev](https://9ba7fd61.tpts-grid.pages.dev) and the production alias; lint, 5/5 route tests and the production build passed | A successful deploy does not activate inventory, booking, checkout, payment confirmation or a commercial integration |
+| Namibian Meridian delivery checks | Root, responsive WebP and same-origin MapLibre worker returned HTTP 200; security headers were present; versioned assets exposed a one-year immutable cache policy | Point-in-time delivery evidence, not an availability SLA or a guarantee that every third-party tile remains reachable |
+| Namibian Meridian browser QA | Clean at 1280 px, 390 × 844 and 320 × 800 with no horizontal overflow, a live MapLibre canvas, 29 readiness cards visible and zero console warnings or errors | Responsive release evidence, not formal accessibility certification; readiness cards do not prove credentials, approval or live inventory |
+| Restored three-stop route | Windhoek–Sesriem–Swakopmund restored and returned a provider-routed 674 km road graph with a 15 h 28 min estimate | Point-in-time planning context, not turn-by-turn navigation, live access, road condition or safety authority |
 | Public surfaces | Root, owner, integrations and payment-readiness surfaces each returned HTTP 200 | Availability of a shell does not activate owner authentication, inventory, payment creation or a marketplace |
 | Map worker | Same-origin MapLibre worker returned HTTP 200 as `application/javascript`, 508,314 bytes | Transfer success does not prove every tile source or future device will remain available |
 | Browser QA | Production walkthrough at 696 px produced no console errors or horizontal overflow; separate 390 px and 320 px responsive layout checks produced no horizontal overflow | Release checks, not formal accessibility certification or exhaustive device coverage |
