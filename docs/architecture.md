@@ -15,7 +15,7 @@ As of 18 October 2026, the public product contains:
 - 21 destination anchors for geographic route context;
 - one Grid Navigator with Discover, Build and Stays task lenses over a shared traveller map;
 - traveller-controlled route search, add, remove, reorder, duration, local save and deliberate sharing inside Build;
-- TPTS Road Intelligence with live MET Norway point forecasts, a bounded openrouteservice adapter and a direct-line fallback that withholds road kilometres and drive time;
+- TPTS Road Intelligence with live MET Norway point forecasts, production-connected openrouteservice routing and a direct-line fallback that withholds road kilometres and drive time;
 - a five-lens Route OS inside the same Build map: Route Truth, Daylight Corridor, Weather Along Route, Route Essentials and Living Namibia;
 - live MET Norway Sunrise solar context, NASA POWER regional climate memory, bounded NASA EONET awareness and an aggregate count-only GBIF signal;
 - a static Offline Route Pack that records generation time, available source context and planning limits without claiming offline map tiles or live navigation;
@@ -25,12 +25,12 @@ As of 18 October 2026, the public product contains:
 - a claim path and an account-free correction/removal path for every public record;
 - private owner onboarding into a verification queue, with its single-point precision map mounted only on request;
 - owner authentication and account visibility held behind a future TPTS-owned identity gate, not claimed as live;
-- a 29-path integration launchpad with 1 owned, 6 live, 3 ready, 6 apply, 10 evaluate and 3 restricted records;
+- a 29-path integration launchpad with 1 owned, 7 live, 2 ready, 6 apply, 10 evaluate and 3 restricted records;
 - a payment readiness boundary with live creation and paid-state confirmation disabled.
 
 Every current public property record is `unclaimed-directory` with `inventoryStatus: none` and `relationshipStatus: not-a-tpts-partner` in the product source. Those fields are a deliberate public contract, not placeholder marketing copy.
 
-The Route OS deployment was externally verified on 18 October 2026. The five lenses reuse one MapLibre instance and one traveller-owned route; they are not separate maps. Route Essentials remains visibly gated and empty until a governed, versioned Namibia extract exists. openrouteservice also remains key-pending, so production currently exposes direct-line route context and withholds road kilometres and drive time.
+The Route OS deployment was externally verified on 18 October 2026. The five lenses reuse one MapLibre instance and one traveller-owned route; they are not separate maps. Route Essentials remains visibly gated and empty until a governed, versioned Namibia extract exists. openrouteservice is production-connected through the bounded server adapter; the tested fallback still exposes only direct-line context and withholds road kilometres and drive time whenever the provider is unavailable.
 
 ## System context
 
@@ -52,7 +52,7 @@ flowchart LR
     power[NASA POWER] -. regional climatology .-> routeOS
     eonet[NASA EONET] -. dated event context .-> living
     gbif[GBIF] -. aggregate count only .-> living
-    ors[openrouteservice] -. key pending .-> routeTruth
+    ors[openrouteservice] -. routed geometry + estimates .-> routeTruth
     traveller -->|reads regional evidence| atlas[Atlas Lens]
     atlas -->|opens selected set| stays
     stays -->|reads factual records| directory[Public place directory]
@@ -85,7 +85,7 @@ Owns navigation, map interaction, route composition, accessible fallbacks and tr
 
 Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. The three Navigator lenses change the traveller's task; the five Route OS lenses inside Build change the intelligence overlay; Field, Atlas and Signal change appearance only. All three layers preserve one map, one ordered route and one selection state.
 
-Renderer, base-map source, route logic, provider-derived road geometry, weather, daylight, climate, natural-event context, biodiversity context, factual property records and future inventory remain independent so one can degrade without corrupting the others. Point weather is attributed to MET Norway. The live Route OS computes a shared solar window from MET Norway Sunrise 3.0, samples regional climatology from NASA POWER, bounds EONET queries to the selected route envelope and reduces GBIF to a five-year aggregate count. The public GBIF output contains no occurrence records, taxa names, coordinates or media. A successful openrouteservice response can supply road-following geometry, distance and estimated duration, but never turn-by-turn navigation, live access or safety authority. Its production key remains pending.
+Renderer, base-map source, route logic, provider-derived road geometry, weather, daylight, climate, natural-event context, biodiversity context, factual property records and future inventory remain independent so one can degrade without corrupting the others. Point weather is attributed to MET Norway. The live Route OS computes a shared solar window from MET Norway Sunrise 3.0, samples regional climatology from NASA POWER, bounds EONET queries to the selected route envelope and reduces GBIF to a five-year aggregate count. The public GBIF output contains no occurrence records, taxa names, coordinates or media. The production-connected openrouteservice boundary can supply road-following geometry, distance and estimated duration after a successful response, but never turn-by-turn navigation, live access or safety authority. Provider failure remains visible and falls back to direct-line context with road metrics withheld.
 
 Route Essentials has a UI boundary but no unverified live objects. Fuel, water, clinic, repair and similar points require a versioned TPTS-hosted Namibia extract, ODbL-aware governance, snapshot-age display and an incomplete-data fallback before the lens can be populated. A public Overpass service is not a production runtime dependency.
 
@@ -122,7 +122,7 @@ The implemented boundary is prepared to create a provider handoff from a server-
 
 ### Channel adapters
 
-The launchpad records 29 owned, public-data, intelligence, messaging, demand, supply and distribution paths by readiness stage. Six public-data paths are live because deployed provider-backed behaviour and fallbacks were verified; the other states do not prove a credential, approval or agreement exists. Future approved adapters must translate into the Grid model without leaking provider-specific assumptions into the traveller experience. Demand access and supply connectivity are different products and must not be described as interchangeable.
+The launchpad records 29 owned, public-data, intelligence, messaging, demand, supply and distribution paths by readiness stage. Seven public-data paths are live because deployed provider-backed behaviour and fallbacks were verified; the other states do not prove a credential, approval or agreement exists. Future approved adapters must translate into the Grid model without leaking provider-specific assumptions into the traveller experience. Demand access and supply connectivity are different products and must not be described as interchangeable.
 
 ## Data classifications
 
@@ -171,7 +171,7 @@ Each transition adds evidence. Discoverable does not mean claimed, and claimed d
 
 ## Deployment posture
 
-The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-grid.pages.dev) on Cloudflare Pages. It uses managed configuration, encrypted transport, environment-scoped secrets and auditable data migrations. Its public discovery surface is separate from the private host-intake and operator boundaries. On 18 October 2026, the Route OS release passed surface checks, same-origin MapLibre-worker delivery, a live 696 px browser walkthrough, separate 390 px and 320 px responsive layout checks, maximum-route schema validation, cold/warm cache checks and a Cloudflare runtime-tail check. Those observations are release evidence, not an uptime or latency guarantee. openrouteservice remains key-pending until an encrypted production secret exists and a public routed response is verified. The public case study remains deliberately non-deployable; environment identifiers, credentials and operational runbooks are not disclosed here.
+The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-grid.pages.dev) on Cloudflare Pages. It uses managed configuration, encrypted transport, environment-scoped secrets and auditable data migrations. Its public discovery surface is separate from the private host-intake and operator boundaries. On 18 October 2026, the Route OS release passed surface checks, same-origin MapLibre-worker delivery, a live 696 px browser walkthrough, separate 390 px and 320 px responsive layout checks, maximum-route schema validation, cold/warm cache checks and a Cloudflare runtime-tail check. The earlier openrouteservice activation deployment also proved failure-safe degradation: its initial failed route withheld road metrics and was not written to the normalized TPTS edge cache. Hardened runtime revision `c8000f6` was then reverified on the stable hostname with a fresh 12-stop route returning connected routed truth, 9,719 geometry points, 2,778.5 km, 2,173 minutes and 11 legs, followed by an exact-repeat cache hit. Provider secrets remained environment configuration rather than properties of a deployment URL. The observations are release evidence, not an uptime or latency guarantee. The public case study remains deliberately non-deployable; environment identifiers, credentials and operational runbooks are not disclosed here.
 
 ## External programme gates
 
