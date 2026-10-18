@@ -1,10 +1,10 @@
-# Desert Signal · Namibian Meridian design system
+# Desert Signal · TPTS Countryfront design system
 
-Desert Signal is the public design system for TPTS Grid: a map-native product with the confidence of financial infrastructure and the sensory character of Namibia. **Namibian Meridian** is its cinematic expression—a visual journey that changes atmosphere with the country's geography while preserving one calm interaction system.
+Desert Signal is the public design system for TPTS Grid: a map-native product with the confidence of financial infrastructure and the sensory character of Namibia. The **TPTS Countryfront** is its current cinematic expression—a visual journey that changes atmosphere with Namibia's geography and a complete Desert Day / Astro Night cycle while preserving one calm interaction system.
 
-Each section has one deliberate role: the opening creates desire, the Navigator creates orientation, the four landscape movements create memory, the factual directory creates trust and onboarding collects evidence.
+Each section has one deliberate role: the opening creates desire, Country Pulse adds useful national context, the Navigator creates orientation, the landscape chapters create memory, the factual directory creates trust and onboarding collects evidence.
 
-This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the production Route OS release verified on 18 October 2026.
+This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the production release verified on 18 October 2026.
 
 ## Brand idea
 
@@ -12,7 +12,7 @@ This is a rationale and token reference, not a distributable copy of the product
 
 The mark is imagined as route lines meeting at signal nodes: road, place, payment and people becoming one coherent grid. It avoids literal animals, flags and predictable dune silhouettes. The result should feel Namibian through material, light, scale and rhythm—not decoration.
 
-The Meridian extends that idea through the full page. A fine north/south signal line and three quiet nodes connect the experience without behaving like a progress tracker or competing with the map. The line is an editorial device; it does not indicate route completion, live position or distance.
+The countryfront extends that idea through the full page. Route threads, topographic lines, horizon gradients and photographic stages connect the experience without behaving like a progress tracker or competing with the map. They are editorial devices; they do not indicate route completion, live position or distance.
 
 ## Voice
 
@@ -35,35 +35,28 @@ Primary lines:
 
 ## Colour
 
-| Token | Value | Role |
-| --- | --- | --- |
-| Night 1000 | `#041617` | Deepest map and editorial ground |
-| Night 950 | `#061B1C` | Primary dark surface |
-| Night 900 | `#0A292B` | Raised dark surface |
-| Atlantic 700 | `#0D6872` | Geographic and interactive depth |
-| Atlantic 500 | `#15949A` | Supporting information |
-| Signal 400 | `#42D5BD` | Primary action, focus and live signal |
-| Signal 300 | `#78EAD4` | Hover and luminous accent |
-| Dune 700 | `#A94F32` | Earth-tone emphasis on light surfaces |
-| Dune 500 | `#CE6842` | Brand warmth and route accent |
-| Dune 400 | `#EF9B7B` | Warm focus detail on dark geographic surfaces |
-| Sun 400 | `#F1AE3F` | Sparse highlight or caution |
-| Salt 50 | `#FFFDF7` | Primary light surface |
-| Salt 100 | `#F5EFE2` | Warm secondary surface |
-| Limestone 200 | `#DED2BC` | Dividers and landscape-neutral detail |
-| Fog 200 | `#BFD2CF` | Quiet information on dark surfaces |
-| Lichen 500 | `#53635E` | Accessible secondary copy on light surfaces |
+The system has one semantic palette expressed through two complete light cycles.
 
-Colour is semantic, never the only carrier of state. Signal teal means action, focus or connection; dune marks editorial warmth and route character; sun is intentionally rare.
+| Family | Representative values | Role |
+| --- | --- | --- |
+| Mineral ink | `#061716`, `#082421`, `#102625` | Astro Night ground, focused geographic surfaces and strong text |
+| Desert cream | `#FFF9EC`, `#FBF6EA`, `#F6E6CA` | Desert Day page, paper and sand surfaces |
+| Atlantic | `#147C80`, `#2F9C94`, `#73CDC1` | Navigation, focus, active connection and water context |
+| Clay | `#923F29`, `#C5643F`, `#E0956E` | Route character, editorial warmth and primary light-theme emphasis |
+| Sun | `#DDA64E`, `#F2B84D` | Sparse attention and daylight context |
+| Mist | `#DCEBE2`, `#C7D7CE`, `#526460` | Quiet panels, dividers and secondary copy |
+
+**Desert Day** applies cream, sand, mist, Atlantic teal, clay and sun across the entire page. **Astro Night** moves the same hierarchy into mineral green-black, warm ochre, muted clay and luminous aqua. Cards, fields, media overlays, footer, safety surfaces and section transitions all participate; a theme switch is not a header-only recolour.
+
+Colour is semantic, never the only carrier of state. Text and icons keep connected, partial, unavailable, gated and error states legible without hue. Image overlays use theme-specific contrast treatment so the foreground and photography feel related rather than pasted together.
 
 ## Typography
 
-- **Display:** [Geologica](https://github.com/googlefonts/geologica) — variable, compact and geological without becoming themed.
-- **Editorial:** [Newsreader](https://github.com/productiontype/Newsreader) — variable, optical serif used sparingly for emotional clauses, landscape chapters and the closing manifesto.
+- **Brand and display:** [Geologica](https://github.com/googlefonts/geologica) — variable, compact and geological without becoming themed.
 - **Interface:** [IBM Plex Sans](https://github.com/IBM/plex) — highly legible controls and longer UI copy.
 - **Data:** IBM Plex Mono — coordinates, status labels, route metadata and compact system information.
 
-Geologica carries structure and confidence; Newsreader adds human warmth at moments where the story leaves pure interface language. The pair never alternates inside ordinary controls. Large type uses tight tracking and disciplined line breaks. The mono face is a functional layer, not an aesthetic applied to paragraphs.
+Geologica carries both structure and emotional scale through deliberate weight, optical-size, shape and spacing choices. IBM Plex Sans keeps ordinary controls and reading relaxed. IBM Plex Mono is a functional layer, not an aesthetic applied to paragraphs. No decorative serif is used in the current release.
 
 ## Shape and layout
 
@@ -74,7 +67,7 @@ Geologica carries structure and confidence; Newsreader adds human warmth at mome
 - the cinematic hero uses location-accurate Namibia imagery and a route signal, not a second live map;
 - the route workspace reads as one wide instrument—map first, evidence second—rather than two equal dashboard cards;
 - each major product chapter has its own geographic atmosphere instead of repeating one solid brand fill;
-- the four-image landscape sequence uses scale and asymmetry to communicate different environments, not a generic equal-card grid;
+- progressive postcard and editorial landscape sequences use scale and asymmetry to communicate different environments without flooding the first viewport with equal cards;
 - map, imagery and copy overlap only when contrast and pointer behaviour remain unambiguous;
 - controls meet a 44 px minimum target, with 48 px preferred for primary actions.
 
@@ -85,7 +78,7 @@ Motion should feel like a vehicle settling onto a road: quick, weighted and purp
 - entrance motion uses restrained vertical reveal;
 - selections have a short spring response;
 - the convergence mark can draw its routes and then resolve its nodes;
-- the Meridian nodes breathe slowly while the page is active, without communicating product state;
+- countryfront route nodes and atmosphere layers breathe slowly while the page is active, without communicating product state;
 - hover lift and image scale run only on devices that actually support hover;
 - scroll navigation announces spatial movement without hijacking scroll;
 - loading language may sequence “mapping / connecting / opening Namibia” while work is real;
@@ -116,7 +109,7 @@ The base map is context; the TPTS overlay is meaning.
 
 Map restraint is part of the identity. The property directory uses an **Atlas Lens**—regional evidence, record counts and coverage gaps—instead of mounting another map. Owner onboarding mounts a separate precision map only after an explicit request and only to place or review one public-facing point. The two tools are scoped, labelled and never presented as alternate traveller maps.
 
-The current directory has 28 factual property records and 27 exact OSM points. Their marker treatment communicates “discoverable / unclaimed,” never availability. The remaining record keeps a null coordinate instead of showing a guessed pin.
+The current directory has 28 factual property records and 27 sourced OpenStreetMap-derived map points: 17 OSM nodes and 10 explicitly labelled geometry centroids. Their marker treatment communicates “discoverable / unclaimed,” never availability. The remaining record keeps a null coordinate instead of showing a guessed pin.
 
 ## Grid Navigator interaction language
 
@@ -145,22 +138,42 @@ Within Build:
 
 The five intelligence lenses and the three Navigator task lenses have different hierarchy. Discover / Build / Stays answer “what am I doing?”; Route / Light / Sky / Stops / Living answer “which evidence am I inspecting inside my route?” This distinction keeps the information architecture legible and prevents another row of equal-looking global navigation.
 
+## Country Pulse interaction language
+
+Country Pulse is a place-led planning surface, not another map or a generic weather widget.
+
+- four clearly named Namibia locations switch the image, forecast and contextual summary;
+- temperature, condition, wind, precipitation, sunrise, sunset and climate memory remain grouped by meaning rather than scattered across decorative cards;
+- generated travel cues explain the underlying weather signal and never claim to be personalised safety advice;
+- the FCDO card shows its source, public update time, scope limitation and Open Government Licence attribution;
+- the “Help in Namibia” action opens a focused, keyboard-contained drawer with tap-to-call and copy actions;
+- core contact numbers are saved into the traveller-generated Offline Route Pack and a separate static offline safety shell;
+- unavailable provider data becomes a named fallback state—never a plausible-looking fake live reading.
+
 ## Imagery
 
-Imagery reveals Namibia's scale, texture and transitions: Atlantic fog, salt, basalt, road, dune, river light and human-made shelter. The current visual release uses six real, location-specific photographs with creator, source and licence provenance:
+Imagery reveals Namibia's scale, texture and transitions: city, Atlantic fog, salt, road, dune, canyon, pan, wildlife, community landscape and river light.
 
-- a road to Spitzkoppe for the opening;
-- Dune 45 at sunrise for the Namib movement;
-- a Skeleton Coast shipwreck and dune field for the Atlantic movement;
-- elephants at an Etosha water point for the Etosha movement;
-- an Okavango sunset in Bwabwata for the Kavango movement;
+The current production release uses **10 licensed photographs** with creator, source and licence provenance:
+
+- the road to Spitzkoppe;
+- Windhoek's Independence Avenue;
+- Swakopmund from the jetty;
+- Dune 45 at sunrise;
+- Fish River Canyon;
+- the Skeleton Coast;
+- elephants at an Etosha water point;
+- Nyae Nyae Pan;
+- the Okavango at Bwabwata;
 - Spitzkoppe for the closing manifesto.
 
-Responsive WebP derivatives keep bandwidth and crop control inside the product. The treatment permits resizing, responsive cropping and restrained colour adjustment; it does not permit changing the represented place or creating an invented stay. Visible page-level credits provide the immediate source cue, while the footer and [photography provenance register](image-provenance.md) preserve the complete record.
+It also uses **3 original AI-assisted photorealistic TPTS campaign compositions** inspired by the real landscapes of Deadvlei, Sandwich Harbour and an Etosha dry-season waterhole. Each is labelled in the opening scene selector as a composition or real-place reference, not a documentary photograph.
 
-These photographs are **destination atmosphere only**. They never stand in for a property image, listing relationship, room, rate, review, availability or booking state. The factual directory continues to omit third-party property photography until a verified operator supplies content it is authorised to use.
+Responsive WebP derivatives keep bandwidth and crop control inside the product. Licensed treatment permits resizing, responsive cropping and restrained colour adjustment within the source licence. Visible page-level credits provide immediate source cues, while the footer and [image provenance register](image-provenance.md) preserve the complete record.
 
-When generative imagery is used for a future concept presentation, it must be labelled, kept outside factual supply surfaces and never presented as bookable inventory. The current six-image Namibian Meridian sequence is photographed, not generated.
+All imagery is **destination atmosphere only**. It never stands in for a property image, listing relationship, room, rate, review, availability or booking state. The factual directory continues to omit third-party property photography until a verified operator supplies content it is authorised to use.
+
+Generated compositions stay outside factual property surfaces, remain explicitly labelled and may not be used to imply documentary truth. They depict no identifiable private individual and carry no invented logo, property or endorsement.
 
 ## Accessibility contract
 
@@ -175,14 +188,14 @@ The visual identity is successful only if the product remains operable:
 - pair geolocation with an explicit consent action and a manual alternative;
 - never encode availability, payment or verification solely in colour.
 
-Current implementation evidence includes a skip link, labelled map regions, keyboard marker buttons, `aria-live` status messages, focus containment/restoration for the command dialog and reduced-motion handling for map movement and decorative reveals. These measures are a maintained baseline, not a claim of formal accessibility certification.
+Current implementation evidence includes a skip link, labelled map regions, keyboard marker buttons, `aria-live` status messages, focus containment/restoration for the command and safety dialogs, theme-aware browser chrome and reduced-motion handling for map movement and decorative reveals. These measures are a maintained baseline, not a claim of formal accessibility certification.
 
 ## Responsive and mobile contract
 
 The phone layout is designed as a first-class task surface rather than a scaled desktop canvas:
 
 - the Navigator map and active lens panel stack, and long route lists stop using nested scroll regions;
-- the four landscape movements become a deliberate vertical sequence with readable credits and focal points instead of shrinking into an illegible desktop mosaic;
+- postcard and editorial landscape collections become a deliberate vertical sequence with readable credits and focal points instead of shrinking into an illegible desktop mosaic;
 - the hero photograph, copy and route composer preserve a clear reading order and useful controls at 320 px, 390 px and wider phone layouts;
 - property and integration grids become single-column;
 - the mobile dock keeps Explore, Trip, Places and Host within reach, respects safe-area insets and yields while the host precision map is open;
@@ -194,6 +207,18 @@ The phone layout is designed as a first-class task surface rather than a scaled 
 
 The breakpoint work is implementation evidence, not a substitute for ongoing device, keyboard, screen-reader, contrast and zoom testing.
 
+## Install and offline contract
+
+Installability is useful only when its limits remain obvious:
+
+- a browser install affordance appears only when the platform exposes the prompt;
+- iOS receives explicit Share → Add to Home Screen guidance;
+- the installed experience uses standalone display and theme-aware browser chrome;
+- the service worker stores only a bounded public shell and immutable public assets;
+- API, owner, listing, booking, checkout and payment responses are never cached for offline replay;
+- an offline navigation failure opens a purpose-built safety screen, not a stale imitation of the live marketplace;
+- live maps, weather, availability, listings, payments and bookings remain explicitly unavailable offline.
+
 ## Attribution
 
 The experience footer should include:
@@ -202,4 +227,4 @@ The experience footer should include:
 
 Third-party map, type and channel marks remain subject to their own licences and brand rules. Their inclusion in documentation does not imply partnership or approval.
 
-Photography attribution and adaptation notes are maintained in the [Namibia photography provenance register](image-provenance.md). An image source does not imply that its creator or hosting platform endorses TPTS Grid.
+Photography attribution, campaign-composition disclosure and adaptation notes are maintained in the [Namibia image provenance register](image-provenance.md). An image source does not imply that its creator or hosting platform endorses TPTS Grid.

@@ -1,44 +1,59 @@
-# Namibia photography provenance
+# Namibia image provenance
 
-TPTS Grid uses genuine, location-specific Namibia photography to establish destination atmosphere. The six-image system was assembled and reviewed on **18 October 2026** for the Namibian Meridian visual release.
+TPTS Grid uses location-specific Namibia imagery to establish destination atmosphere. The current production system contains **10 licensed photographs** and **3 original AI-assisted photorealistic TPTS campaign compositions**. It was reconciled against the production release on **18 October 2026**.
 
-This register is part of the product's truth boundary. A destination photograph is **not** evidence of a TPTS listing, property relationship, room, rate, review, availability or booking status. Property records use a separate factual data model and remain unclaimed and non-bookable until their own verification, inventory and commercial gates are met.
+This register is part of the product's truth boundary. An image is **not** evidence of a TPTS listing, property relationship, room, rate, review, availability or booking status. Property records use a separate factual model and remain unclaimed and non-bookable until their verification, inventory and commercial gates pass.
 
-## Source and licence register
+## Licensed photograph register
 
-| Product use | Photograph and place | Creator | Source record | Licence |
-| --- | --- | --- | --- | --- |
-| Homepage opening | Long desert road leading to Spitzkoppe | NIR HIMI | [Unsplash photo record](https://unsplash.com/photos/long-desert-road-leading-to-distant-mountains-under-blue-sky-di2M7MAunVg) | [Unsplash License](https://unsplash.com/license) |
-| Namib movement | Dune 45 in Sossusvlei at sunrise | Giles Laurent | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:006_Dune_45_in_Sossusvlei_at_sunrise_Photo_by_Giles_Laurent.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| Atlantic movement | Skeleton Coast shipwreck and dunes | Andrew Svk | [Unsplash photo record](https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-sandy-beach-lsGmUO_bZqM) | [Unsplash License](https://unsplash.com/license) |
-| Etosha movement | Herd of African bush elephants drinking in Etosha National Park | Giles Laurent | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:079_Herd_of_African_bush_elephants_drinking_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| Kavango movement | Okavango sunset in Bwabwata National Park | Jedesto | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Okavango_Sunset_Bwabwata.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| Closing manifesto | Spitzkoppe, Namibia | Diego Delso | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Spitzkoppe,_Namibia,_2018-08-04,_DD_43.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Place and production use | Creator | Source record | Licence |
+| --- | --- | --- | --- |
+| Road to Spitzkoppe · social preview and Namibia road atmosphere | NIR HIMI | [Unsplash photo record](https://unsplash.com/photos/long-desert-road-leading-to-distant-mountains-under-blue-sky-di2M7MAunVg) | [Unsplash License](https://unsplash.com/license) |
+| Independence Avenue, Windhoek · opening scene, postcard and Country Pulse | tjabeljan | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Independence_Avenue_-_Windhoek.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+| Swakopmund waterfront · postcard and Country Pulse | Hp.Baumeler | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Swakopmund_see_from_the_Jetty.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Dune 45 at Sossusvlei · postcard, story and Country Pulse | Giles Laurent | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:006_Dune_45_in_Sossusvlei_at_sunrise_Photo_by_Giles_Laurent.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Fish River Canyon · postcard | Olga Ernst | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Fish_River_Canyon,_Namibia.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Skeleton Coast · postcard and Atlantic story | Andrew Svk | [Unsplash photo record](https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-sandy-beach-lsGmUO_bZqM) | [Unsplash License](https://unsplash.com/license) |
+| Etosha elephants · postcard, story and Country Pulse | Giles Laurent | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:079_Herd_of_African_bush_elephants_drinking_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Nyae Nyae Pan · community-led culture postcard | Hp.Baumeler | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Nyae_Nyae_See.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Okavango sunset, Bwabwata · postcard and river story | Jedesto | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Okavango_Sunset_Bwabwata.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Spitzkoppe landscape · closing manifesto | Diego Delso | [Wikimedia Commons file record](https://commons.wikimedia.org/wiki/File:Spitzkoppe,_Namibia,_2018-08-04,_DD_43.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+
+## Original campaign composition register
+
+| Opening scene | Production disclosure | Use boundary |
+| --- | --- | --- |
+| Deadvlei reference · Sossusvlei | Original AI-assisted photorealistic TPTS campaign composition inspired by the real clay pan, black camelthorn skeletons and dune landscape | Labelled as a composition; not a documentary photograph, property or route-condition record |
+| Sandwich Harbour reference · Atlantic coast | Original AI-assisted photorealistic TPTS campaign composition inspired by the real dune-and-ocean geography | Labelled as a composition; not proof of access, tide, road condition, operator permission or safety |
+| Etosha reference · salt-pan edge | Original AI-assisted photorealistic TPTS campaign composition inspired by Etosha's dry-season waterhole landscape | Labelled as a composition; not a wildlife sighting, documentary event or park-condition report |
+
+The compositions contain no supplied third-party property photograph, copied OTA asset, identifiable private subject, external logo or invented endorsement. They are production campaign assets and are not distributed under this public repository's licence.
 
 ## Derivative treatment
 
-The production experience serves locally controlled responsive WebP derivatives instead of loading full-resolution third-party files at runtime. The treatment is intentionally limited:
+The production experience serves locally controlled WebP assets rather than loading full-resolution third-party files at runtime. Licensed treatments are limited to what the applicable licence permits:
 
-- resize and crop for desktop, tablet and phone art direction;
-- light colour, contrast and brightness adjustment for legible interface overlays;
-- no compositing that changes the represented place or invents a property;
-- concise creator credit beside each story use and a complete source/licence register in the experience footer;
-- Creative Commons adaptations remain under CC BY-SA 4.0, with the creator, source and licence retained.
+- responsive resize and crop for desktop, tablet and phone art direction;
+- restrained colour, contrast and brightness adjustment for legible interface overlays;
+- no change that turns one represented place into another or invents a stay;
+- concise creator/source credit beside material editorial use and a complete footer register;
+- Creative Commons adaptations retain the creator, source and licence, including share-alike where required.
 
-The photographs themselves are not distributed from this public case-study repository. This repository records provenance and product intent; the canonical customer surface carries the responsive derivatives and in-product credits.
+The photographs and campaign compositions are not distributed from this public case-study repository. This repository records provenance and product intent; the canonical production surface carries the rendered derivatives and in-product disclosure.
 
 ## Editorial boundaries
 
-The visual sequence is a geographic invitation, not a catalogue:
+The image system is a geographic invitation, not a catalogue:
 
-- the opening road establishes the idea of a traveller-owned route;
-- the four movements show genuinely different Namibian landscapes rather than four interchangeable travel cards;
-- the closing image returns the interface from infrastructure to place;
-- captions name the place and creator without adding fabricated stay claims;
-- no third-party property image, OTA description, rating, review, logo, price or availability is copied into the factual directory.
+- opening scenes state whether they are an original composition or a licensed photograph;
+- real photography shows genuinely different Namibian landscapes and settlements rather than interchangeable travel imagery;
+- captions name the place, creator/source or composition status without fabricated stay claims;
+- images remain separate from the factual property directory;
+- no third-party property image, OTA description, rating, review, logo, price or availability is copied into a public stay record;
+- imagery never upgrades an unclaimed place to claimed or bookable status.
 
-If a photograph is replaced, its replacement must pass the same location, rights, attribution and non-misrepresentation review before publication.
+If an image is replaced, the replacement must pass the same place, rights, attribution, disclosure and non-misrepresentation review before publication.
 
 ## Correction path
 
-Source, creator or licence corrections can be submitted through [info@tptsnam.com](mailto:info@tptsnam.com). Do not include private documents, account credentials or unrelated personal information in a correction request.
+Source, creator, licence or disclosure corrections can be submitted through [info@tptsnam.com](mailto:info@tptsnam.com). Do not include private documents, account credentials or unrelated personal information in a correction request.
