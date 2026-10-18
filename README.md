@@ -17,12 +17,13 @@ This repository is the public product case study. It contains no production sour
 
 The 18 October 2026 release is organised around one cinematic countryfront and one shared traveller map:
 
-- **22 destination anchors** provide sourced geographic context across Namibia.
+- **27 destination anchors** provide sourced geographic context across Namibia.
 - **One Grid Navigator** preserves place and route state while travellers switch between three primary lenses: **Discover**, **Build** and **Stays**.
 - **Build** starts with the traveller, not a preloaded itinerary. A route can contain up to 12 chosen stops and supports add, remove, reorder, trip name, duration, local save, deliberate share and a static Offline Route Pack.
-- **TPTS Road Intelligence** combines provider-routed road geometry and estimates from openrouteservice with MET Norway point forecasts. A provider failure falls back visibly to direct-line context and withholds road kilometres and drive time.
+- **TPTS Road Intelligence** combines provider-routed road geometry and estimates from openrouteservice with MET Norway point forecasts. Routing has a hard eight-second provider deadline. Healthy responses use a five-minute browser and fifteen-minute edge cache; failed ORS-mode responses fall back visibly, withhold road kilometres and drive time, and use only a two-minute isolated fallback cache.
 - Five subordinate evidence views inside Build—route, daylight, weather, essentials and living context—reuse the same map. They do not create five competing maps.
 - **Country Pulse** brings latest-model MET weather, sunrise/sunset and NASA POWER climate context together with dated UK FCDO source links and verified Namibian help contacts. It is planning context, not an observation, emergency feed or safety verdict.
+- **Read the Sky** gives each Country Pulse location a dedicated, unobstructed photograph and a compact responsive weather, guidance and help composition rather than placing copy over the image.
 - **28 factual stays** form a correctable public directory: 17 OSM nodes, 10 OSM geometry centroids and one record without a guessed coordinate. They carry no copied OTA description, price, rating, review, availability or partner claim.
 - **Direct owner onboarding** collects a private draft for verification. Submission does not silently publish a property, create inventory or make it bookable.
 - **35 integration paths** are classified by evidence rather than ambition: 1 owned, 8 live, 3 build-ready, 8 apply, 12 evaluate and 3 restricted.
@@ -30,7 +31,7 @@ The 18 October 2026 release is organised around one cinematic countryfront and o
 - **Desert Day** and **Astro Night** change the complete visual journey—not only the header—while preserving semantic state, contrast and readable fallbacks.
 - The installable **PWA boundary** includes a standalone manifest, install affordance, icons and a deliberately narrow offline safety shell. API, owner, listing, booking and payment responses are excluded from offline caching.
 
-The visual system now uses **10 licensed, source-linked Namibia photographs** and **3 original AI-assisted photorealistic TPTS campaign compositions** inspired by real Deadvlei, Sandwich Harbour and Etosha landscapes. The compositions are labelled as such and never stand in for documentary evidence, a property or bookable supply. See the [image provenance register](docs/image-provenance.md).
+The homepage now uses **33 unique, source-linked Namibia photograph families with zero cross-section repetition**. The expansion introduced **28 genuine Wikimedia Commons photographs**; 27 appear once on the homepage and Hardap Dam is held in reserve, while six retained photographs complete the live sequence. Four real-photo hero scenes, four dedicated Country Pulse scenes, 12 destination postcards, an eight-scene Country Atlas, four field notes and one closing panorama each receive a different visual family. See the [image provenance register](docs/image-provenance.md).
 
 The retained [earlier Route Studio capture](assets/tpts-grid-route-studio-live-2026-10-16.jpg) is release history. It is not presented as the current information architecture or proof of inventory, an OTA connection or payment activation.
 
@@ -39,7 +40,7 @@ The retained [earlier Route Studio capture](assets/tpts-grid-route-studio-live-2
 | Surface | Current posture | What is deliberately not claimed |
 | --- | --- | --- |
 | Countryfront | Desert Day / Astro Night, Geologica display and brand typography, IBM Plex Sans UI, IBM Plex Mono data text, cinematic motion and reduced-motion handling | That atmosphere or motion proves product state |
-| Namibia imagery | 10 licensed photographs plus 3 clearly labelled AI-assisted photorealistic campaign compositions | That an image proves a listing, operator relationship, room, price or availability |
+| Namibia imagery | 33 unique real-photo families on the homepage; 28 newly sourced through Wikimedia Commons with complete creator, source and licence records | That an image proves a listing, operator relationship, room, price or availability |
 | Grid Navigator | One traveller map with Discover, Build and Stays primary lenses | Turn-by-turn navigation, road access, safety, availability or reservation proof |
 | Build intelligence | Route, daylight, forecast, climate, event and aggregate biodiversity context with independent provider states | Comprehensive coverage, an official warning, wildlife prediction or a safe-route verdict |
 | Country Pulse | Latest-model weather and daylight, regional climate memory, FCDO source links and verified Namibian contacts | Live observation, personalised immigration advice, emergency triage or safety guarantee |
@@ -53,7 +54,7 @@ The retained [earlier Route Studio capture](assets/tpts-grid-route-studio-live-2
 
 The Navigator changes the task without moving the traveller into a different geographic product:
 
-- **Discover** searches the 22 destination anchors and opens local context, route and nearby-stay actions.
+- **Discover** searches the 27 destination anchors and opens local context, route and nearby-stay actions.
 - **Build** makes the chosen route the primary object. Suggestions are optional, explainable and reversible; travellers can begin from an empty route and keep control of every stop.
 - **Stays** synchronises the shared map with the factual public property ledger. A sourced coordinate remains a geographic fact, not a commercial claim.
 
@@ -154,9 +155,9 @@ Read the [public architecture notes](docs/architecture.md) for the disclosed sys
 
 The countryfront is deliberately cohesive without becoming monotonous:
 
-1. **Cinematic opening.** Real-place cues and clearly labelled original compositions create desire before the product becomes technical.
+1. **Cinematic opening.** Four distinct real photographs—Deadvlei, Sandwich Harbour, Etosha and the Namibian night sky—create desire before the product becomes technical.
 2. **One geographic instrument.** The Grid Navigator receives the deepest, most focused visual chapter and remains the traveller's only persistent map.
-3. **Real Namibia in the page rhythm.** Windhoek, Swakopmund, Sossusvlei, Fish River Canyon, Skeleton Coast, Etosha, Nyae Nyae, the Okavango and Spitzkoppe appear through licensed, source-linked photography.
+3. **Real Namibia in the page rhythm.** Windhoek, Swakopmund, Sossusvlei, Fish River Canyon, Skeleton Coast, Etosha, Nyae Nyae, the Okavango and Spitzkoppe sit within a 33-image sequence spanning city, coast, desert, river, wildlife, geology, heritage, weather and sky.
 4. **Two complete light cycles.** Desert Day uses cream, sand, mist, Atlantic teal, clay and sun; Astro Night moves the entire journey into mineral green-black, warm ochre and luminous aqua.
 5. **One type voice.** Geologica carries brand/display hierarchy; IBM Plex Sans carries controls and reading; IBM Plex Mono carries coordinates, source stamps and compact state.
 
@@ -171,9 +172,9 @@ Grid is a **live production discovery, route-planning and onboarding pilot**, no
 | Capability | Status on 18 October 2026 |
 | --- | --- |
 | Cinematic Namibia countryfront | Live; Desert Day / Astro Night, responsive scene system and reduced-motion handling |
-| Image provenance | Live; 10 licensed photographs and 3 labelled AI-assisted photorealistic TPTS campaign compositions |
+| Image provenance | Live; 33 unique homepage photograph families, 28 newly sourced from Wikimedia Commons, all source-linked and locally served |
 | Grid Navigator | Live; one traveller map with Discover, Build and Stays primary lenses |
-| Destination anchors | Live; 22 public geographic anchors |
+| Destination anchors | Live; 27 public geographic anchors |
 | Road and route intelligence | Live; openrouteservice, MET Norway, Sunrise, NASA POWER, EONET and aggregate-only GBIF behind bounded adapters |
 | Country Pulse | Live; latest-model context, FCDO source link, verified help contacts and explicit limitations |
 | Public stays | Live; 28 factual, correctable records with 27 sourced map points |
@@ -186,7 +187,9 @@ Grid is a **live production discovery, route-planning and onboarding pilot**, no
 
 ## Production verification · 18 October 2026
 
-The current release from reviewed private source revision `a7bdf8143ec2258dc555820640c2a237f038768f` is live at [tpts-grid.pages.dev](https://tpts-grid.pages.dev). The release gate recorded successful type checking, linting, **6/6 tests** and a production build. Browser QA covered wide desktop, laptop, tablet and 390/320 px phone layouts without horizontal overflow or console errors in the tested flows.
+The current release from reviewed private source revision `28fb7aeef581cb90851b71b0d3e1abc03f477e7a` is live at [tpts-grid.pages.dev](https://tpts-grid.pages.dev). The release gate recorded successful type checking, linting, **13/13 tests** and a production build. Source-level tests assert all 33 homepage visual assignments are unique, have complete creator/source/licence records and resolve to local responsive WebP assets. Route-cache tests assert the healthy and failed-provider policies independently.
+
+Browser QA covered wide desktop, laptop, tablet and 390/320 px phone layouts across both Desert Day and Astro Night. The tested flows included the hero, Country Pulse image stage, compact weather module, Country Atlas and closing manifesto without horizontal overflow or console errors. The weather module remains a three-card row at wide viewports, a compact tablet composition and a three-column mobile metrics grid, with a two-column fallback below 350 px.
 
 Point-in-time delivery checks confirmed HTTP 200 for the canonical root, web app manifest, service worker and offline safety screen, with security headers present. Route-provider evidence remains planning context and not an uptime, latency, navigation, access or safety guarantee.
 

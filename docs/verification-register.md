@@ -10,19 +10,20 @@ This register records dated public evidence and the limits attached to it. It co
 
 | Product claim | Evidence reviewed | What the evidence supports |
 | --- | --- | --- |
-| Production release | Reviewed private revision `a7bdf8143ec2258dc555820640c2a237f038768f`; type check, lint, 6/6 automated tests and production build | The current release passed its dated engineering gate; this is not an uptime or defect-free guarantee |
+| Production release | Reviewed private revision `28fb7aeef581cb90851b71b0d3e1abc03f477e7a`; type check, lint, 13/13 automated tests and production build | The current release passed its dated engineering gate; this is not an uptime or defect-free guarantee |
 | Delivery | Canonical root, manifest, service worker and offline safety page returned HTTP 200; response included security headers | The public shell and install/offline assets were available at the test time |
-| Responsive behaviour | Wide desktop, laptop, tablet and 390/320 px phone walkthroughs | No horizontal overflow or console errors were observed in the tested flows; this is not formal accessibility certification |
+| Responsive behaviour | Wide desktop, laptop, tablet and 390/320 px phone walkthroughs in Desert Day and Astro Night | No horizontal overflow or console errors were observed across the hero, Country Pulse, compact weather module, Country Atlas and closing manifesto in the tested flows; this is not formal accessibility certification |
 | Countryfront | Current production UI and theme rules | Desert Day and Astro Night affect full sections, cards, fields, imagery overlays and browser theme colour—not only the navigation bar |
 | Typography | Production font imports and rendered hierarchy | Geologica is the brand/display family; IBM Plex Sans is the interface family; IBM Plex Mono is the data/status family; Newsreader is not part of the current system |
-| Image system | Production footer register, scene disclosures and [public image register](image-provenance.md) | 10 licensed photographs and 3 labelled AI-assisted photorealistic TPTS campaign compositions; none is property or inventory evidence |
-| Destination layer | Current public destination module | 22 geographic anchors for route context; an anchor is not inventory or a safety/access claim |
+| Image system | Canonical 33-slot visual registry, production footer register and [public image register](image-provenance.md) | 33 unique real-photo homepage families with zero cross-section reuse; 28 were newly sourced from Wikimedia Commons and none is property or inventory evidence |
+| Image source tests | Four source-level visual tests | Exactly 33 unique semantic assignments, complete creator/source/licence records and existing local responsive WebP candidates; these tests do not replace human crop or licence review |
+| Destination layer | Current public destination module | 27 geographic anchors for route context; an anchor is not inventory or a safety/access claim |
 | Grid Navigator | Current production interaction and responsive walkthrough | One persistent traveller map exposes Discover, Build and Stays primary lenses; subordinate Build evidence views reuse the same map |
 | Route ownership | Build interaction walkthrough | Travellers can begin empty, add/remove/reorder up to 12 stops, edit trip name and duration, save locally, share deliberately and export a static pack |
 | Public property index | Current factual directory module | 28 records: 17 OSM nodes, 10 labelled OSM geometry centroids and 1 record with no guessed point; every record remains unclaimed and non-bookable |
 | Claim and correction | Public record and onboarding flows | Every stay exposes claim and account-free correction/removal routes; a claim still requires authority verification |
 | Owner onboarding | Three-step form and intake state | Submission creates a private verification-required draft; it does not publish, create inventory or make a stay bookable |
-| Country Pulse | Production weather/context surface | Latest-model weather/daylight, regional climate memory, FCDO source links and verified contacts appear with source and scope limitations |
+| Country Pulse | Production weather/context surface and responsive walkthrough | Each location has dedicated unobstructed imagery; latest-model weather/daylight, regional climate memory, FCDO source links and verified contacts appear in a compact responsive composition with source and scope limitations |
 | Help in Namibia | Production safety drawer and offline screen | Sourced contacts include 112, 10111, 9682, Windhoek response, Tourist Protection and the Ministry helpline; TPTS does not triage or guarantee connection |
 | PWA installability | Standalone manifest, browser install handling, iOS guidance, icons and service worker | The site is installable where supported; offline support is limited to a public safety shell and safe static assets |
 | Offline data boundary | Service-worker rules and offline page | API, owner, listing, booking, checkout and payment responses are excluded from cache; stale content is not presented as current live data |
@@ -41,7 +42,9 @@ The following point-in-time observations were made against the canonical product
 | Natural-event context | Connected NASA EONET response with no matching event in the bounded request | “No match” does not mean no hazard exists; EONET is not an official emergency or closure feed |
 | Biodiversity context | Connected, aggregate-only GBIF mode | No record-level species, coordinate or media payload is claimed; an aggregate never predicts a sighting |
 | Travel-advice request | HTTP 200; direct Namibia guidance link, public update time and Open Government Licence v3.0 disclosure | General UK FCDO guidance, not personalised visa clearance, Namibian authority advice or a safety guarantee |
-| Routing boundary | openrouteservice is the production routed-road provider; direct-line fallback remains explicit | A route line or drive estimate is planning context, not navigation, traffic, access, closure or safety authority |
+| Routing boundary | openrouteservice is the production routed-road provider; direct-line fallback remains explicit; the provider deadline is eight seconds | A route line or drive estimate is planning context, not navigation, traffic, access, closure or safety authority |
+| Route cache policy | Automated policy tests plus a cold and exact-repeat production request | Healthy direct/routed responses use 300-second client and 900-second edge freshness; failed ORS-mode responses use a 120-second isolated fallback cache and continue to withhold road metrics |
+| Routed production smoke | Cold request returned routed/connected road truth in 1.43 seconds; exact repeat returned in 0.295 seconds with an edge cache hit | Point-in-time evidence for the tested two-stop route, not an SLA or complete provider-coverage claim |
 | Payment readiness | Live creation disabled; partner diagnostic limited to authorised read-only scope | No checkout, charge, merchant processing or automatic payment confirmation is live |
 
 Provider data changes, and public programme terms can change. These observations are dated evidence, not an SLA.
@@ -95,7 +98,7 @@ The names below link to the official public programme or documentation page used
 | CallPay merchant integration | [General merchant terms](https://www.callpay.com/merchant-general-terms/) | Merchant acceptance and service-specific integration documents precede activation; public terms are not a complete payment specification |
 | TPTS privacy | [Privacy policy](https://www.tptsnam.com/privacy-policy/) | Operative privacy information for product and owner-submission handling |
 | TPTS contact | [Contact](https://www.tptsnam.com/contact/) | Public channel for product, property and correction enquiries |
-| Licensed and generated imagery | [Public image provenance](image-provenance.md) | Creator/source/licence records plus explicit campaign-composition disclosure and supply-truth boundaries |
+| Namibia photography | [Public image provenance](image-provenance.md) | Creator/source/licence records for the expanded real-photo atlas plus explicit supply-truth boundaries |
 
 ## Interpretation rules
 

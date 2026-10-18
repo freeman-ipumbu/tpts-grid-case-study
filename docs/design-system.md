@@ -143,6 +143,8 @@ The five intelligence lenses and the three Navigator task lenses have different 
 Country Pulse is a place-led planning surface, not another map or a generic weather widget.
 
 - four clearly named Namibia locations switch the image, forecast and contextual summary;
+- every location owns a dedicated, unobstructed photograph stage with its caption and source separated from the forecast copy;
+- weather, guidance and help form a compact three-card row on wide screens, recompose at tablet widths and reduce to a three-column metric grid on phones;
 - temperature, condition, wind, precipitation, sunrise, sunset and climate memory remain grouped by meaning rather than scattered across decorative cards;
 - generated travel cues explain the underlying weather signal and never claim to be personalised safety advice;
 - the FCDO card shows its source, public update time, scope limitation and Open Government Licence attribution;
@@ -152,28 +154,23 @@ Country Pulse is a place-led planning surface, not another map or a generic weat
 
 ## Imagery
 
-Imagery reveals Namibia's scale, texture and transitions: city, Atlantic fog, salt, road, dune, canyon, pan, wildlife, community landscape and river light.
+Imagery reveals Namibia's scale, texture and transitions: city, Atlantic fog, salt, road, dune, canyon, pan, wildlife, community landscape, river light, architecture, rock art, weather and night sky.
 
-The current production release uses **10 licensed photographs** with creator, source and licence provenance:
+The current homepage uses **33 unique real-photograph families with zero cross-section repetition**:
 
-- the road to Spitzkoppe;
-- Windhoek's Independence Avenue;
-- Swakopmund from the jetty;
-- Dune 45 at sunrise;
-- Fish River Canyon;
-- the Skeleton Coast;
-- elephants at an Etosha water point;
-- Nyae Nyae Pan;
-- the Okavango at Bwabwata;
-- Spitzkoppe for the closing manifesto.
+- four real-photo opening scenes: Deadvlei, Sandwich Harbour, Etosha elephants and the Namibian night sky;
+- four dedicated Country Pulse / “Read the Sky” scenes: Windhoek, Swakopmund, Sesriem and Okaukuejo;
+- 12 destination postcards;
+- an eight-scene Country Atlas spanning the Quiver Tree Forest, Brandberg, Twyfelfontein, Epupa Falls, Popa Falls, Kolmanskop, the Zambezi and Welwitschia country;
+- four field-note scenes and one separate Spitzkoppe closing panorama.
 
-It also uses **3 original AI-assisted photorealistic TPTS campaign compositions** inspired by the real landscapes of Deadvlei, Sandwich Harbour and an Etosha dry-season waterhole. Each is labelled in the opening scene selector as a composition or real-place reference, not a documentary photograph.
+The expansion introduced **28 genuinely distinct Wikimedia Commons photographs**. Twenty-seven are assigned once on the homepage, Hardap Dam is retained for a later route or destination surface, and six separately licensed retained photographs complete the 33-slot live sequence. This allocation replaces the previous pattern in which responsive derivatives created the appearance of variety while the same underlying photographs recurred across sections.
 
 Responsive WebP derivatives keep bandwidth and crop control inside the product. Licensed treatment permits resizing, responsive cropping and restrained colour adjustment within the source licence. Visible page-level credits provide immediate source cues, while the footer and [image provenance register](image-provenance.md) preserve the complete record.
 
 All imagery is **destination atmosphere only**. It never stands in for a property image, listing relationship, room, rate, review, availability or booking state. The factual directory continues to omit third-party property photography until a verified operator supplies content it is authorised to use.
 
-Generated compositions stay outside factual property surfaces, remain explicitly labelled and may not be used to imply documentary truth. They depict no identifiable private individual and carry no invented logo, property or endorsement.
+The production slot registry and source-level tests treat responsive sizes as derivatives of one visual family—not extra images. They reject duplicate homepage family assignments, incomplete creator/source/licence metadata and missing local WebP candidates. Archived campaign compositions stay outside factual property surfaces and are not part of the current homepage sequence.
 
 ## Accessibility contract
 
@@ -196,6 +193,7 @@ The phone layout is designed as a first-class task surface rather than a scaled 
 
 - the Navigator map and active lens panel stack, and long route lists stop using nested scroll regions;
 - postcard and editorial landscape collections become a deliberate vertical sequence with readable credits and focal points instead of shrinking into an illegible desktop mosaic;
+- Country Pulse preserves the photograph as a bounded foreground stage instead of placing it behind copy, and the weather panel contracts without swallowing the phone viewport;
 - the hero photograph, copy and route composer preserve a clear reading order and useful controls at 320 px, 390 px and wider phone layouts;
 - property and integration grids become single-column;
 - the mobile dock keeps Explore, Trip, Places and Host within reach, respects safe-area insets and yields while the host precision map is open;

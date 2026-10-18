@@ -12,20 +12,20 @@ The core must still let a traveller discover Namibia, shape a route and let a le
 
 As of 18 October 2026, the production pilot contains:
 
-- 22 sourced destination anchors;
+- 27 sourced destination anchors;
 - one Grid Navigator with Discover, Build and Stays primary lenses over a shared MapLibre map;
 - a traveller-owned route with add, remove, reorder, name, duration, local save, deliberate share and static export;
 - five subordinate evidence views inside Build that reuse the shared map rather than mounting competing maps;
 - openrouteservice road geometry and estimates behind a bounded server adapter;
 - MET Norway weather and solar context, NASA POWER climatology, NASA EONET awareness and aggregate-only GBIF context;
-- Country Pulse with latest-model context, dated UK FCDO source links and verified Namibian help contacts;
+- Country Pulse with latest-model context, dedicated unobstructed photography, a compact responsive weather/guidance/help composition, dated UK FCDO source links and verified Namibian help contacts;
 - 28 factual public property records: 17 OSM nodes, 10 OSM geometry centroids and one record that retains no guessed point;
 - claim and account-free correction/removal paths for every public stay;
 - private owner onboarding into a verification-required state;
 - 35 integration records: 1 owned, 8 live, 3 build-ready, 8 apply, 12 evaluate and 3 restricted;
 - a guarded OneGate API V2 boundary with live payment creation and automatic paid-state confirmation disabled;
 - an installable PWA shell with a strictly bounded offline safety experience;
-- 10 licensed photographs and 3 labelled AI-assisted photorealistic campaign compositions kept separate from supply evidence;
+- 33 unique real-photograph families on the homepage, including 28 newly sourced Wikimedia Commons photographs with complete creator, source and licence provenance, kept separate from supply evidence;
 - full Desert Day and Astro Night visual themes using Geologica, IBM Plex Sans and IBM Plex Mono.
 
 The product is a production discovery, route-planning and onboarding pilot. It is not yet a live accommodation marketplace.
@@ -79,7 +79,7 @@ The Atlas Lens is a non-map regional distribution view. The owner precision map 
 | Biodiversity | Five-year aggregate GBIF occurrence count only | No species, occurrence coordinates, media or sighting prediction |
 | Travel advice | Dated GOV.UK Content API links with OGL attribution | General UK FCDO guidance, not personalised visa clearance or Namibian authority advice |
 | Emergency contacts | Sourced public Namibian service contacts with coverage notes | TPTS does not auto-dial, triage or guarantee connection/coverage |
-| Imagery | 10 licensed photos plus 3 labelled original campaign compositions | Destination atmosphere, never property or inventory evidence |
+| Imagery | 33 unique homepage photograph families; 28 newly sourced from Wikimedia Commons with per-source licence metadata | Destination atmosphere, never property or inventory evidence |
 
 Each provider can fail or return no match without erasing the traveller's route, map fallback or other sources. Provider state, freshness, attribution and material limitations remain visible near the result.
 
@@ -94,6 +94,8 @@ A successful routed response may supply road-following geometry, distance, estim
 5. the degraded result cannot masquerade as successful routed truth.
 
 No result becomes turn-by-turn navigation or a statement about road access, traffic, closures or personal safety.
+
+The routing adapter has a hard eight-second provider deadline. Healthy direct or successfully routed responses use a 900-second edge cache and a 300-second client cache. A failed ORS-mode response is isolated under the ORS-mode key, caches only when the independently degradable companion public-data layers complete, and expires after 120 seconds at both edge and client. The short cache limits repeated timeout storms while forcing an early recovery attempt; it never promotes direct-line fallback into road truth.
 
 ## Property state machine
 
@@ -158,13 +160,13 @@ Navigation failure falls back to the stored safety shell, which shows verified c
 
 ## Presentation is not data
 
-Desert Day, Astro Night, animation, licensed photography and original campaign compositions form the presentation layer. They cannot mutate route order, provider state, property status, inventory or payment truth.
+Desert Day, Astro Night, animation and licensed photography form the presentation layer. They cannot mutate route order, provider state, property status, inventory or payment truth.
 
-The three AI-assisted compositions are explicitly labelled and kept out of property cards and factual supply records. The production experience carries visible source/provenance cues; the public [image register](image-provenance.md) records the rights and use boundaries.
+The current homepage uses a canonical 33-slot visual registry: four hero scenes, four Country Pulse scenes, 12 postcards, eight Country Atlas scenes, four field notes and one closing panorama. Each slot owns a different underlying photograph family. Automated source-level tests reject duplicate asset assignments, missing creator/source/licence records and missing local responsive WebP candidates. The production experience carries visible source/provenance cues; the public [image register](image-provenance.md) records the rights and use boundaries.
 
 ## Release evidence
 
-The production release from reviewed private revision `a7bdf8143ec2258dc555820640c2a237f038768f` was verified on 18 October 2026. Type checking, lint, 6/6 automated tests and the production build passed. Browser checks covered wide desktop, laptop, tablet and 390/320 px phone layouts in the tested flows, with no observed horizontal overflow or console errors.
+The production release from reviewed private revision `28fb7aeef581cb90851b71b0d3e1abc03f477e7a` was verified on 18 October 2026. Type checking, lint, 13/13 automated tests and the production build passed. Browser checks covered wide desktop, laptop, tablet and 390/320 px phone layouts in both Desert Day and Astro Night. The hero, dedicated Country Pulse image stage, compact weather module, Country Atlas and closing panorama showed no observed horizontal overflow or console errors in the tested flows.
 
 Point-in-time HTTP checks confirmed the canonical root, manifest, service worker and offline safety page were available with security headers. These observations are release evidence—not an uptime, latency, accessibility, provider-coverage, navigation, access or safety guarantee.
 
