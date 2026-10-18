@@ -2,7 +2,7 @@
 
 Desert Signal is the public design direction for TPTS Grid: a map-native digital product with the confidence of financial infrastructure and the sensory character of Namibia. Each section has one deliberate role: the opening creates desire, the Navigator creates orientation, the Atlas Lens creates trust and onboarding collects evidence.
 
-This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the 16 October 2026 discovery-pilot release.
+This is a rationale and token reference, not a distributable copy of the production interface or logo artwork. Product references reflect the 18 October 2026 discovery-pilot release.
 
 ## Brand idea
 
@@ -90,7 +90,7 @@ The base map is context; the TPTS overlay is meaning.
 - Discover prioritises destination context, Build prioritises the traveller's ordered line and Stays prioritises factual property points and their synchronized records;
 - **Field**, **Atlas** and **Signal** are visual appearances over the same attributed map and product data; a style switch never changes a place's state;
 - destination anchors, unclaimed property points and a future bookable state remain visually and textually distinct;
-- a planned route uses a strong continuous signal, but is labelled as journey order rather than a navigable road line;
+- a planned route uses a strong continuous signal; it is labelled as direct-line journey order until a successful provider response supplies road-following geometry, and even then remains planning guidance rather than navigation;
 - attribution remains visible;
 - selected markers provide a corresponding text label and detail surface;
 - zoom controls are keyboard operable;
@@ -118,6 +118,7 @@ Within Build:
 - the optional Grid Guide explains a suggestion and offers a reversible action;
 - local saving and sharing are described separately;
 - direct-line kilometres carry an asterisk and plain-language warning;
+- road kilometres and drive time appear only for a successful routing-provider response, while live point weather names its public source;
 - inventory, price and road-condition authority never appear in the planning surface.
 
 ## Imagery

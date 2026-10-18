@@ -10,18 +10,19 @@ The core product must still help a traveller discover Namibia, shape a route and
 
 ## Current public footprint
 
-As of 16 October 2026, the public product contains:
+As of 18 October 2026, the public product contains:
 
 - 21 destination anchors for geographic route context;
 - one Grid Navigator with Discover, Build and Stays task lenses over a shared traveller map;
 - traveller-controlled route search, add, remove, reorder, duration, local save and deliberate sharing inside Build;
+- TPTS Road Intelligence with live MET Norway point forecasts, a bounded openrouteservice adapter and a direct-line fallback that withholds road kilometres and drive time;
 - three visual map appearances—Field, Atlas and Signal—over the same underlying truth;
 - 28 factual property directory records, including 27 exact OSM-sourced points;
 - an Atlas Lens that presents regional record distribution without mounting a duplicate directory map;
 - a claim path and an account-free correction/removal path for every public record;
 - private owner onboarding into a verification queue, with its single-point precision map mounted only on request;
 - owner authentication and account visibility held behind a future TPTS-owned identity gate, not claimed as live;
-- a 15-path integration launchpad that records programme readiness, not connection status;
+- a 20-path integration launchpad that records programme readiness, not connection status;
 - a payment readiness boundary with live creation and paid-state confirmation disabled.
 
 Every current public property record is `unclaimed-directory` with `inventoryStatus: none` and `relationshipStatus: not-a-tpts-partner` in the product source. Those fields are a deliberate public contract, not placeholder marketing copy.
@@ -60,11 +61,11 @@ flowchart LR
 
 ### Experience layer
 
-Owns navigation, map interaction, route composition, accessible fallbacks and transparent state labels. The Grid Navigator keeps three tasks in one traveller map: Discover reads destination context, Build composes an editable trip and Stays inspects factual property signals. A cinematic opening composer may suggest an itinerary, but every stop remains editable. Its line is journey order and direct-line context, not a road route. Story cards, directory actions and search controls enter the relevant lens instead of creating more map instances. The experience must not fabricate a rate, room, road condition or partnership.
+Owns navigation, map interaction, route composition, accessible fallbacks and transparent state labels. The Grid Navigator keeps three tasks in one traveller map: Discover reads destination context, Build composes an editable trip and Stays inspects factual property signals. A cinematic opening composer may suggest an itinerary, but every stop remains editable. Without a successful routing-provider response, its line is journey order and direct-line context; road kilometres and drive time are withheld. Story cards, directory actions and search controls enter the relevant lens instead of creating more map instances. The experience must not fabricate a rate, room, road condition or partnership.
 
 ### Geographic intelligence
 
-Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. The three Navigator lenses change task and overlay; Field, Atlas and Signal change appearance only. Renderer, base-map source, route logic, factual property records and future inventory remain independent so one can change without corrupting the others. The Atlas Lens is a non-map evidence view of regional record distribution, while the host precision map is an isolated, on-demand tool for setting one public point. Neither competes with the traveller map.
+Stores public destination anchors and TPTS-authored planning metadata separately from commercial properties. The three Navigator lenses change task and overlay; Field, Atlas and Signal change appearance only. Renderer, base-map source, route logic, provider-derived road geometry, weather context, factual property records and future inventory remain independent so one can change without corrupting the others. Point weather is attributed to MET Norway. A successful openrouteservice response can supply road-following geometry, distance and estimated duration, but never turn-by-turn navigation, live access or safety authority. The Atlas Lens is a non-map evidence view of regional record distribution, while the host precision map is an isolated, on-demand tool for setting one public point. Neither competes with the traveller map.
 
 ### Supply and verification
 
@@ -80,7 +81,7 @@ The implemented boundary is prepared to create a provider handoff from a server-
 
 ### Channel adapters
 
-The launchpad records 15 owned, public-data, demand, supply and distribution paths by readiness stage. It does not prove that an adapter, credential, approval or agreement exists. Future approved adapters must translate into the Grid model without leaking provider-specific assumptions into the traveller experience. Demand access and supply connectivity are different products and must not be described as interchangeable.
+The launchpad records 20 owned, public-data, demand, supply and distribution paths by readiness stage. It does not prove that an adapter, credential, approval or agreement exists. Future approved adapters must translate into the Grid model without leaking provider-specific assumptions into the traveller experience. Demand access and supply connectivity are different products and must not be described as interchangeable.
 
 ## Data classifications
 
@@ -117,6 +118,7 @@ Each transition adds evidence. Discoverable does not mean claimed, and claimed d
 ## Resilience principles
 
 - **Map failure is not product failure.** Keep the Build editor, synchronized text results, factual directory and manual coordinate entry available.
+- **Provider failure is not itinerary failure.** Weather, routing, route editing and the base map degrade independently, and unavailable road metrics are withheld rather than guessed.
 - **Channel failure is not inventory loss.** Preserve a canonical TPTS record and explicit source provenance.
 - **Browser success is not payment success.** Only trusted server-side confirmation can settle a booking state.
 - **Generated advice is not operational truth.** Separate suggestions from live availability, policy and road-safety data.

@@ -2,7 +2,7 @@
 
 This register records the evidence used for time-sensitive statements in the case study. It contains no credentials, application records, private correspondence, host contact details or provider-issued implementation material.
 
-Last reviewed: **16 October 2026**
+Last reviewed: **18 October 2026**
 
 ## Product-owned release evidence
 
@@ -10,6 +10,7 @@ Last reviewed: **16 October 2026**
 | --- | --- | --- |
 | Grid Navigator | Current product source and release walkthrough | One shared traveller map with Discover, Build and Stays task lenses; lens changes preserve one geographic workspace while changing the active overlay and controls. |
 | Build lens | Current product source and release walkthrough; [earlier Route Studio capture](../assets/tpts-grid-route-studio-live-2026-10-16.jpg) retained as release history | Empty-start route editor with search, add, remove, reorder, trip name/nights, local save, deliberate share and non-navigation disclaimers. The linked image predates the unified Navigator information architecture. |
+| TPTS Road Intelligence | Current production endpoint, desktop walkthrough and 390 px responsive walkthrough | Live MET Norway forecasts at selected destination anchors; direct-line fallback visibly withholds road kilometres and drive time; successful provider geometry is accepted only through the bounded server adapter. |
 | Map appearances | Current production map configuration | Field, Atlas and Signal select three OpenFreeMap styles without changing product state or data. |
 | Cinematic opening | Current product source and responsive walkthrough | Location-accurate Namibia imagery, route-signal motion and search/composer actions hand off into the relevant Navigator lens; no competing hero map is mounted. |
 | Public property index | Current factual directory module evaluated on 16 October 2026 | 28 records; 27 non-null exact OSM points; every record is unclaimed, has no inventory and is not represented as a TPTS partner. |
@@ -17,7 +18,7 @@ Last reviewed: **16 October 2026**
 | Claim and correction | Current directory cards and factual record pages | Every record has a claim path and an account-free correction/removal path. Claiming still requires authority verification. |
 | Owner onboarding | Current three-step form, validation contract and intake state machine | Public point and operating facts can enter a private `verification_required` queue; its precision map opens only on explicit request and submission does not publish or create inventory. |
 | Owner authentication and account access | Current customer-surface review and identity boundary | Gated pending TPTS-owned identity; no authenticated owner workspace is claimed live on the canonical Cloudflare customer surface. |
-| Integration launchpad | Current 15-record public readiness catalogue | One owned path, one attribution-ready public-data path, five apply paths, five evaluate paths and three restricted paths; no live connection claim. |
+| Integration launchpad | Current 20-record public readiness catalogue | One owned path, three ready public-data paths, five apply paths, eight evaluate paths and three restricted paths; no credential, approval or live-inventory claim. |
 | Payment boundary | Current readiness UI and server-side payment boundary | Partner diagnostics are read-only; live payment creation and automatic paid-state confirmation are disabled. |
 | Dependency audit | Current lockfile, pnpm 11.25.0, `pnpm audit --prod --json` and `pnpm audit --json` | Production scope reported 0 advisories. Full graph reported 34 development-path advisories: 15 high, 13 moderate, 6 low and 0 critical. |
 
@@ -44,6 +45,11 @@ The retained screenshot is evidence of the earlier rendered Route Studio surface
 | CallPay merchant integration | [General merchant terms](https://www.callpay.com/merchant-general-terms/) | Merchant acceptance and service-specific Integration Documents precede service activation; public terms are not a complete payment specification. |
 | OpenStreetMap data | [Copyright and licence](https://www.openstreetmap.org/copyright) and [OSMF legal FAQ](https://osmfoundation.org/wiki/Licence_and_Legal_FAQ) | Map facts require attribution and ODbL-aware handling; an OSM point does not imply a commercial relationship. |
 | OpenFreeMap | [openfreemap.org](https://openfreemap.org/) | Public style service used by Field, Atlas and Signal map modes. |
+| MET Norway Locationforecast | [Terms of service](https://api.met.no/doc/TermsOfService) and [Locationforecast guide](https://api.met.no/doc/locationforecast/HowTO) | Public global point forecasts require an identifying user agent, responsible caching and attribution; forecasts are context, not safety advice. |
+| openrouteservice | [Developer portal](https://openrouteservice.org/dev/) and [service restrictions](https://openrouteservice.org/restrictions/) | A free Standard key can provide road geometry, distance and estimated duration within published limits; the public programme does not imply that TPTS has installed a production key. |
+| Frankfurter | [frankfurter.dev](https://frankfurter.dev/) | No-key reference exchange-rate data is available; any future display conversion must remain indicative and separate from a canonical NAD price. |
+| Cloudflare Turnstile | [Product documentation](https://developers.cloudflare.com/turnstile/) | A free challenge path exists, but server-side Siteverify and issued widget credentials are required before activation. |
+| NASA FIRMS | [Area API](https://firms.modaps.eosdis.nasa.gov/api/area/) | Active-fire observations are an evaluation path for separately labelled awareness context, not a current routing or safety feature. |
 | TPTS privacy and contact | [Privacy policy](https://www.tptsnam.com/privacy-policy/) and [contact](https://www.tptsnam.com/contact/) | Operative privacy information and the public channel for product, property and correction enquiries. |
 
 ## Interpretation rules

@@ -5,7 +5,7 @@
 
 [![Case study](https://img.shields.io/badge/repository-public%20case%20study-42d5bd?style=flat-square&labelColor=061b1c)](#about-this-repository)
 [![Product status](https://img.shields.io/badge/product-discovery%20pilot-f1ae3f?style=flat-square&labelColor=061b1c)](#project-status)
-[![Snapshot](https://img.shields.io/badge/snapshot-16%20Oct%202026-ce6842?style=flat-square&labelColor=061b1c)](#current-product-snapshot)
+[![Snapshot](https://img.shields.io/badge/snapshot-18%20Oct%202026-ce6842?style=flat-square&labelColor=061b1c)](#current-product-snapshot)
 
 TPTS Grid is a Namibia-first travel network for spatial discovery, traveller-owned route planning and direct property onboarding. Its current public release makes Namibia easier to explore without pretending that a sourced map record is a partner, that a route line is navigation, or that an integration pathway is live inventory.
 
@@ -15,10 +15,11 @@ The canonical customer production surface is [tpts-grid.pages.dev](https://tpts-
 
 ## Current product snapshot
 
-The 16 October 2026 release is organised around **one shared traveller map**, supported by two deliberately different evidence and host tools:
+The 18 October 2026 release is organised around **one shared traveller map**, supported by two deliberately different evidence and host tools:
 
 - **The Grid Navigator** keeps discovery, route composition and factual stay inspection in one geographic workspace. Its three task lenses—**Discover**, **Build** and **Stays**—change the controls and overlay, not the traveller's place in Namibia.
 - **Discover** searches 21 real Namibian destination anchors. **Build** lets a traveller add up to 12 stops, remove or reorder them, name the trip, set its length, keep it in local browser storage and share it deliberately. **Stays** filters and selects factual property points without inventing price, availability or partner status.
+- **TPTS Road Intelligence** adds live MET Norway point forecasts to the traveller's chosen stops. A bounded server adapter can replace direct-line context with openrouteservice road geometry, distance and estimated drive time only when the optional server key is installed; without it, road kilometres and drive time are visibly withheld.
 - **The Atlas Lens** replaces a second directory map with a quieter regional evidence view: **28 factual public property records**, **27 exact, individually attributed OpenStreetMap points** and the distribution of those records across the represented regions.
 - **The owner precision map** is not another exploration surface. It stays closed until an operator explicitly opens it to place or review one public-facing point, with manual coordinates retained as a fallback.
 - **Field, Atlas and Signal** remain visual map appearances over the same attributed OpenFreeMap/OpenStreetMap context. A style change never alters route order, record state, inventory or trust.
@@ -31,13 +32,13 @@ The [previous standalone Route Studio capture](assets/tpts-grid-route-studio-liv
 
 | Surface | Current posture | What is deliberately not claimed |
 | --- | --- | --- |
-| Grid Navigator | One traveller map with Discover, Build and Stays task lenses | Turn-by-turn routing, live road conditions, availability or a reservation |
+| Grid Navigator | One traveller map with Discover, Build and Stays task lenses; live stop weather; provider-routed road geometry when connected | Turn-by-turn navigation, proof of road access or safety, availability or a reservation |
 | Map appearance | Field, Atlas and Signal styles; accessible status and text fallbacks | That a style, marker or map point is a partner or a bookable room |
 | Atlas Lens and property directory | Regional evidence view plus 28 independently checked factual records; 27 exact OSM points | A duplicate exploration map; copied OTA descriptions, photos, ratings, reviews, prices or availability |
 | Property records | Official link, locality, source provenance, claim and correction paths | Operator control until authority has been verified |
 | Owner onboarding | A three-step private submission and verification queue | Automatic publication, verification or bookability |
 | Owner account access | Gated pending a TPTS-owned identity boundary | That owner authentication, an account workspace, operator controls, publication or inventory activation are live |
-| Integration launchpad | 15 public programme paths classified by readiness | Credentials, approval, signed agreements or live production access |
+| Integration launchpad | 20 public programme paths classified by readiness | Credentials, approval, signed agreements or live production access |
 | Payments | A guarded server-side architecture and readiness boundary | Live payment creation or automatic paid-state confirmation |
 
 ## From discoverable to claimed to bookable
@@ -68,7 +69,11 @@ Within Build, travellers can:
 - see an optional, explainable suggestion that can be accepted or undone;
 - store the draft locally on the device and share only on request;
 - retain a text-first editing surface when the basemap is degraded;
-- label direct-line distance and journey order honestly, with no road-kilometre or navigation claim.
+- see live point weather across selected stops;
+- receive provider-routed road geometry, distance and estimated drive time only from a successful server-side routing response;
+- fall back to clearly labelled direct-line context while withholding road kilometres and drive time when routing is not connected.
+
+The Road Intelligence deck makes provider failure visible instead of letting it collapse the itinerary. Weather, route editing and the base map degrade independently. Even a routed result remains planning guidance—not turn-by-turn navigation, proof of access or a road-safety statement.
 
 The cinematic opening composer can suggest a route from a brief such as coast, desert or wildlife, then hands that suggestion into Build. The hero uses real Namibia imagery and an animated route thread instead of running a competing live map behind the primary task. Suggestions remain editable and carry no inventory, price, road-safety or availability authority.
 
@@ -90,14 +95,14 @@ Owner authentication and the account workspace are not live on the canonical cus
 
 ## Safe integration launchpad
 
-Grid exposes an integration research surface, not an integration trophy case. The launchpad was reviewed on **16 October 2026** and classifies 15 paths without asserting credentials or production access.
+Grid exposes an integration research surface, not an integration trophy case. The launchpad was reviewed on **18 October 2026** and classifies 20 paths without asserting credentials or production access.
 
 | Stage | Paths | Meaning |
 | --- | --- | --- |
 | **Owned** | TPTS Direct | The canonical discovery, claim and future native-inventory direction belongs to TPTS. |
-| **Ready with attribution** | OpenStreetMap + Wikidata | Public facts and geographic provenance only; never availability or partner status. |
+| **Ready with attribution / terms** | OpenStreetMap + Wikidata, MET Norway Weather, Frankfurter FX | Public geography, point weather and reference exchange data under their respective terms; never availability or partner status. |
 | **Apply** | Booking.com Demand, Expedia Rapid, Hostelworld, ResRequest ResConnect, NightsBridge | A public application, affiliate, NDA/audit or commercial relationship path exists. TPTS approval is not claimed. |
-| **Evaluate** | Hotelbeds / HBX, Google Hotel Center, Travelgate Hotel-X, Channex, Wetu | Technically relevant later paths whose value depends on agreements, certification and a mature native inventory model. |
+| **Evaluate** | openrouteservice, Cloudflare Turnstile, NASA FIRMS, Hotelbeds / HBX, Google Hotel Center, Travelgate Hotel-X, Channex, Wetu | Technically relevant or key-gated paths whose activation depends on configuration, governance, agreements, certification or a mature native inventory model. |
 | **Restricted** | Booking.com Connectivity, Amadeus Hotels, Airbnb | Intake or access constraints make these unsuitable as launch dependencies. |
 
 The UI links each card to an official programme page and states the next legitimate action. It does not scrape inventory, invent partner status or place an external channel inside the canonical TPTS record. See the dated [public verification register](docs/verification-register.md).
@@ -178,12 +183,13 @@ See the [public design-system notes](docs/design-system.md).
 
 Grid is a **live production discovery and onboarding pilot**, not a live accommodation marketplace.
 
-| Capability | Status on 16 October 2026 |
+| Capability | Status on 18 October 2026 |
 | --- | --- |
 | Grid Navigator | Live; one traveller map with Discover, Build and Stays lenses |
 | Namibia destination anchors | Live; 21 public geographic anchors |
 | Map appearance | Field, Atlas and Signal modes live |
 | Build lens | Live; editable, local-first planning aid |
+| TPTS Road Intelligence | Live; MET Norway stop forecasts and truthful direct-line fallback; road routing activates only with the optional server key |
 | Stays lens and factual property directory | Live; 28 records, 27 exact attributed OSM points |
 | Atlas Lens | Live; factual regional distribution view, not a second traveller map |
 | Owner precision map | Live on demand inside onboarding; one public-facing point only |
