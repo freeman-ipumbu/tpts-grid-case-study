@@ -11,6 +11,10 @@ TPTS Grid is a Namibia-first travel network for spatial discovery, traveller-own
 
 The canonical customer surface is [tpts-grid.pages.dev](https://tpts-grid.pages.dev), hosted on Cloudflare Pages.
 
+![TPTS Grid Route Studio live release capture](assets/tpts-grid-route-studio-live-2026-10-16.jpg)
+
+<sub>Retained Route Studio release evidence. The current product has since evolved into the shared Grid Navigator described below; this image is not inventory, booking or payment proof.</sub>
+
 This repository is the public product case study. It contains no production source, environment configuration, credentials, customer information, private host submissions, operational runbooks or private commercial agreements.
 
 ## Current product snapshot
@@ -201,7 +205,7 @@ These checks do not activate booking, inventory, checkout, payment confirmation,
 - **TPTS Namibia:** [tptsnam.com](https://www.tptsnam.com/)
 - **TPTS privacy policy:** [tptsnam.com/privacy-policy](https://www.tptsnam.com/privacy-policy/)
 - **Product enquiries and corrections:** [info@tptsnam.com](mailto:info@tptsnam.com)
-- **Experience portfolio:** [SolarSpin Technologies](https://solarspin-namibia.pages.dev/)
+- **Experience portfolio:** [SolarSpin Technologies](https://www.solarspin-namibia.xyz/)
 - **Image provenance:** [source, licence and use register](docs/image-provenance.md)
 
 ## About this repository
@@ -213,4 +217,4 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a correction. Th
 ---
 
 **TPTS Grid** — Built on Namibian ground.  
-**A Digital Experience by [SolarSpin Technologies](https://solarspin-namibia.pages.dev/).**
+**A Digital Experience by [SolarSpin Technologies](https://www.solarspin-namibia.xyz/).**
