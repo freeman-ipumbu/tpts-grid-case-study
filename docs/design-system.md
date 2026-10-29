@@ -221,7 +221,7 @@ Installability is useful only when its limits remain obvious:
 
 The experience footer should include:
 
-> A Digital Experience by [SolarSpin Technologies](https://solarspin-namibia.pages.dev/)
+> A Digital Experience by [SolarSpin Technologies](https://www.solarspin-namibia.xyz/)
 
 Third-party map, type and channel marks remain subject to their own licences and brand rules. Their inclusion in documentation does not imply partnership or approval.
 
